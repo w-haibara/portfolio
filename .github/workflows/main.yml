@@ -23,6 +23,7 @@ jobs:
         git branch
         git checkout main
         git branch
+        git describe --tags
     - name: yarn install, build
       run: |
         yarn install

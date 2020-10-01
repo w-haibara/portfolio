@@ -21,7 +21,7 @@ jobs:
         git config --global user.email "someone@sample.com"
         git remote set-url origin https://github.com/w-haibara/portfplio
         git branch
-        git checkout main
+        git checkout dev
         git branch
         git describe --tags
     - name: yarn install, build

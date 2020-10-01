@@ -13,7 +13,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Get the latest tag
       run: |
-        version = python3 -c "import json; input=json.load(open('package.json', 'r')); version=input['version'] ; print(version)"
+        export version=`python3 -c "import json; input=json.load(open('package.json', 'r')); version=input['version'] ; print(version)"`
         echo ${version}
     - name: yarn install, build
       run: |
@@ -27,8 +27,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ github.ref }}
-        release_name: v.${{ github.ref }}
+        tag_name: ${version}
+        release_name: v.${version}
         draft: false
         prerelease: false
     - uses: actions/upload-release-asset@v1

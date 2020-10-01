@@ -10,4 +10,4 @@ jobs:
     - name: aaa
       run: echo "::set-env name=action_state::yellow"
     - name: bbb
-      run: echo ${{ action_state }}
+      run: echo $action_state

@@ -4,6 +4,13 @@ on:
     branches: [main]
     types: [opened]
 jobs:
+  :
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+    - uses: actions/checkout@v2
   build:
     runs-on: ubuntu-18.04
     strategy:
@@ -12,9 +19,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Get the latest tag
+      id: get_version
       run: |
         export version=`python3 -c "import json; input=json.load(open('package.json', 'r')); version=input['version'] ; print(version)"`
-        echo ${version}
+        echo "::set-env name=action_state::v${version}"
     - name: yarn install, build
       run: |
         yarn install
@@ -27,8 +35,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${version}
-        release_name: v.${version}
+        tag_name: ${{ version }}
+        release_name: ${{ version }}
         draft: false
         prerelease: false
     - uses: actions/upload-release-asset@v1

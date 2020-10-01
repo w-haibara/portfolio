@@ -1,8 +1,7 @@
 name: CI/CD
 on:
   push:
-    tags:
-      - v*
+    tags: [*]
 jobs:
   build:
     runs-on: ubuntu-18.04

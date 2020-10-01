@@ -15,6 +15,13 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - name: yarn install, build
+      run: |
+        yarn install
+        yarn build
+    - name: zip
+      run: |
+        zip portfolio.zip ./dist/*
     - name: Get the latest tag
       run: |
         git config --global user.name "github workflow"
@@ -24,13 +31,6 @@ jobs:
         git checkout dev
         git branch
         git describe --tags
-    - name: yarn install, build
-      run: |
-        yarn install
-        yarn build
-    - name: zip
-      run: |
-        zip portfolio.zip ./dist/*
     - uses: actions/create-release@v1
       id: create_release
       env:

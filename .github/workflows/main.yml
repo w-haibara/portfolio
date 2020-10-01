@@ -15,7 +15,7 @@ jobs:
       id: get_version
       run: |
         export version=`python3 -c "import json; input=json.load(open('package.json', 'r')); version=input['version'] ; print(version)"`
-        echo "::set-env name=version::v${version}"
+        echo "::set-output name=version::v${version}"
     - name: yarn install, build
       run: |
         yarn install
@@ -28,8 +28,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ version }}
-        release_name: ${{ version }}
+        tag_name: ${{ steps.get_version.outputs.version }}
+        release_name: ${{ steps.get_version.outputs.version }}
         draft: false
         prerelease: false
     - uses: actions/upload-release-asset@v1

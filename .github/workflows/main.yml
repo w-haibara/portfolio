@@ -15,9 +15,16 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - name: Get the latest tag
+      run: |
+        git config --global user.name "github workflow"
+        git config --global user.email "someone@sample.com"
+        git remote set-url origin https://github.com/w-haibara/portfplio
+        git branch
+        git checkout main
+        git branch
     - name: yarn install, build
       run: |
-        git describe --tags
         yarn install
         yarn build
     - name: zip

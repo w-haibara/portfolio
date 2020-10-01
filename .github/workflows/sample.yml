@@ -1,0 +1,13 @@
+
+name: sample
+on: [push]
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    name: job1
+    steps:
+    - name: aaa
+      run: echo "::set-env name=action_state::yellow"
+    - name: bbb
+      run: echo ${{ action_state }}

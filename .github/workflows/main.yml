@@ -18,6 +18,9 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - name: Get the latest tag
+      run: |
+        cat package.json | python3 -c "import sys; args = sys.argv; print(args)"    - name: yarn install, build
     - name: yarn install, build
       run: |
         yarn install

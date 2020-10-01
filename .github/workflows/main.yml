@@ -15,7 +15,7 @@ jobs:
       id: get_version
       run: |
         export version=`python3 -c "import json; input=json.load(open('package.json', 'r')); version=input['version'] ; print(version)"`
-        echo "::set-env name=action_state::v${version}"
+        echo "::set-env name=version::v${version}"
     - name: yarn install, build
       run: |
         yarn install

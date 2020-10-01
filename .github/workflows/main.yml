@@ -10,13 +10,11 @@ jobs:
       matrix:
         node-version: [12.x]
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Get the latest tag
       run: |
-        python3 -c "import json; input=json.load(open('package.json', 'r')); version=input['version'] ; print(version)"    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
+        version = python3 -c "import json; input=json.load(open('package.json', 'r')); version=input['version'] ; print(version)"
+        echo ${version}
     - name: yarn install, build
       run: |
         yarn install

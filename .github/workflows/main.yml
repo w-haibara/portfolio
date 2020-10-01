@@ -17,6 +17,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: yarn install, build
       run: |
+        git describe --tags
         yarn install
         yarn build
     - name: zip

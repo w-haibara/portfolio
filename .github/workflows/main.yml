@@ -11,7 +11,11 @@ jobs:
         node-version: [12.x]
     steps:
     - uses: actions/checkout@v2
-    - name: Get the latest tag
+    - name: automerge
+      uses: "pascalgn/automerge-action@v0.11.0"
+      env:
+        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+    - name: Get version
       id: get_version
       run: |
         export version=`python3 -c "import json; input=json.load(open('package.json', 'r')); version=input['version'] ; print(version)"`

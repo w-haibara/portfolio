@@ -11,6 +11,9 @@ jobs:
         node-version: [12.x]
     steps:
     - uses: actions/checkout@v1
+    - name: Get the latest tag
+      run: |
+        cat package.json | python3 -c "import sys; args = sys.argv; print(args)"
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
@@ -22,15 +25,6 @@ jobs:
     - name: zip
       run: |
         zip portfolio.zip ./dist/*
-    - name: Get the latest tag
-      run: |
-        git config --global user.name "github workflow"
-        git config --global user.email "someone@sample.com"
-        git remote set-url origin https://github.com/w-haibara/portfplio
-        git branch
-        git checkout dev
-        git branch
-        git describe --tags
     - uses: actions/create-release@v1
       id: create_release
       env:

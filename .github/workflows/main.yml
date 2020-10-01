@@ -11,6 +11,9 @@ jobs:
         node-version: [12.x]
     steps:
     - uses: actions/checkout@v1
+    - name: Get the latest tag
+      run: |
+        cat package.json | python3 -c "import sys; args = sys.argv; print(args)"
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
@@ -18,6 +21,7 @@ jobs:
     - name: Get the latest tag
       run: |
         cat package.json | python3 -c "import sys; args = sys.argv; print(args)"    - name: yarn install, build
+    - name: yarn install, build
       run: |
         yarn install
         yarn build

@@ -49,4 +49,4 @@ jobs:
       env:
         INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       with:
-        text: @bot_deploy deploy latest withoutconfirmation
+        text: "@bot_deploy deploy latest withoutconfirmation"

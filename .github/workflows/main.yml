@@ -44,3 +44,9 @@ jobs:
       uses: "pascalgn/automerge-action@v0.11.0"
       env:
         GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+    - name: send slack msg
+      uses: tokorom/action-slack-incoming-webhook@master
+      env:
+        INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      with:
+        text: "@bot_deploy deploy latest withoutconfirmation"

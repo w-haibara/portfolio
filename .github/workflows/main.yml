@@ -22,7 +22,7 @@ jobs:
         yarn build
     - name: zip
       run: |
-        zip portfolio.zip ./dist/*
+        zip -r portfolio.zip ./dist/*
     - uses: actions/create-release@v1
       id: create_release
       env:

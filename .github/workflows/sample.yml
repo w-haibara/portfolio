@@ -7,8 +7,9 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: send slack msg
-        uses: pullreminders/slack-action@v1
-        with:
-          args: '{\"channel\":\"C01BHRMUQR0\", \"text\":\"Hello\"}'
+        uses: tokorom/action-slack-incoming-webhook@master
         env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        with:
+          text: Hello, Slack!
+     

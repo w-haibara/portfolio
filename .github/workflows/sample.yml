@@ -9,6 +9,6 @@ jobs:
       - name: send slack msg
         uses: pullreminders/slack-action@v1
         with:
-          args: '{\"channel\":\"686754068944.1393971658082\", \"text\":\"Hello\"}'
+          args: '{\"channel\":\"C01BHRMUQR0\", \"text\":\"Hello\"}'
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}

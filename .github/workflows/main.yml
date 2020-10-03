@@ -49,4 +49,4 @@ jobs:
       env:
         INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       with:
-        text: "<@A01BCS9HM7Y> deploy latest withoutconfirmation"
+        text: "<@A01BCS9HM7Y> deploy latest withoutconfirmation (https://github.com/w-haibara/portfolio/releases/latest)"

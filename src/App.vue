@@ -13,7 +13,7 @@ export default {
   name: "w-haibara",
   mixins: [BtnEvent],
   mounted() {
-    this.btnEventsInit();
+    this.pageScrollInit();
   },
 };
 </script>

@@ -2,50 +2,72 @@ import router from '@/router'
 
 export default {
     data: () => ({
-        btnEventsCurrentPathNum: 0
+        pageScrollCurrentPathNum: 0,
+        pageScrollY: 0,
+        pageScrollPreY: 0,
     }),
     computed: {
-        btnEventsRouterPaths: function () {
+        pageScrollRouterPaths: function () {
             return ["profile", "works", "slides"];
         },
-        btnEventsRouterPathsLen: function () {
-            return this.btnEventsRouterPaths.length;
+        pageScrollRouterPathsLen: function () {
+            return this.pageScrollRouterPaths.length;
         },
     },
     methods: {
-        btnEventsGetRouterPath(num) {
-            const paths = this.btnEventsRouterPaths;
+        pageScrollGetRouterPath(num) {
+            const paths = this.pageScrollRouterPaths;
             return paths[num];
         },
-        btnEventsPrev() {
-            this.btnEventsCurrentPathNum -= 1;
-            if (this.btnEventsCurrentPathNum < 0) {
-                this.btnEventsCurrentPathNum = 0;
+        pageScrollPrev() {
+            this.pageScrollCurrentPathNum -= 1;
+            if (this.pageScrollCurrentPathNum < 0) {
+                this.pageScrollCurrentPathNum = 0;
             } else {
-                router.push(this.btnEventsGetRouterPath(this.btnEventsCurrentPathNum));
+                router.push(this.pageScrollGetRouterPath(this.pageScrollCurrentPathNum));
             }
         },
-        btnEventsNext() {
-            this.btnEventsCurrentPathNum += 1;
-            if (this.btnEventsCurrentPathNum >= this.btnEventsRouterPathsLen) {
-                this.btnEventsCurrentPathNum = this.btnEventsRouterPathsLen - 1
+        pageScrollNext() {
+            this.pageScrollCurrentPathNum += 1;
+            if (this.pageScrollCurrentPathNum >= this.pageScrollRouterPathsLen) {
+                this.pageScrollCurrentPathNum = this.pageScrollRouterPathsLen - 1
             } else {
-                router.push(this.btnEventsGetRouterPath(this.btnEventsCurrentPathNum))
+                router.push(this.pageScrollGetRouterPath(this.pageScrollCurrentPathNum))
             }
         },
-        btnEventsMove(e) {
+        pageScrollKeyMove(e) {
             switch (e.code) {
                 case 'ArrowUp':
-                    this.btnEventsPrev();
+                    this.pageScrollPrev();
                     break;
                 case 'ArrowDown':
-                    this.btnEventsNext();
+                    this.pageScrollNext();
                     break;
             }
         },
-        btnEventsInit() {
-            this.btnEventsCurrentPathNum = this.btnEventsRouterPaths.indexOf(this.$route.path.slice(1));
-            document.addEventListener("keydown", this.btnEventsMove);
+        pageScrollWheelMove(y) {
+            const th = 370;
+            if (y < -th) {
+                this.pageScrollY = 0;
+                this.pageScrollPrev();
+            } else if (y > th) {
+                this.pageScrollY = 0;
+                this.pageScrollNext();
+            }
+        },
+        pageScrollIntegral(event) {
+            event.preventDefault();
+            const y = event.deltaY;
+            if (y * this.pageScrollPreY >= 0) {
+                this.pageScrollY += y;
+            }
+            this.pageScrollPreY = y;
+            this.pageScrollWheelMove(this.pageScrollY);
+        },
+        pageScrollInit() {
+            this.pageScrollCurrentPathNum = this.pageScrollRouterPaths.indexOf(this.$route.path.slice(1));
+            document.addEventListener("keydown", this.pageScrollKeyMove);
+            document.addEventListener("wheel", this.pageScrollIntegral, { passive: false });
         }
     },
 }

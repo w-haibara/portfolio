@@ -7,7 +7,13 @@
 </template>
 
 <script>
+import BtnEvent from "@/mixins/BtnEvent";
+
 export default {
   name: "w-haibara",
+  mixins: [BtnEvent],
+  mounted() {
+    this.btnEventsInit();
+  },
 };
 </script>

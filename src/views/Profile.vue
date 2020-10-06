@@ -1,11 +1,6 @@
 
 <template>
-  <v-sheet
-    color="blue-grey lighten-5"
-    class="blue-grey--text text--darken-4"
-    height="100%"
-    tile
-  >
+  <v-sheet class="blue-grey--text text--darken-4" height="100%" tile>
     <v-container>
       <v-layout wrap>
         <v-flex>
@@ -21,7 +16,7 @@
           </p>
         </v-flex>
         <v-flex>
-          <v-list dense color="blue-grey lighten-5">
+          <v-list dense>
             <v-subheader
               class="font-weight-light blue-grey--text text--darken-4"
               style="font-size: large"

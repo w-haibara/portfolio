@@ -46,7 +46,7 @@ export default {
             }
         },
         pageScrollWheelMove(y) {
-            const th = 370;
+            const th = 450;
             if (y < -th) {
                 this.pageScrollY = 0;
                 this.pageScrollPrev();

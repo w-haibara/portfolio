@@ -30,16 +30,6 @@ export default {
   data: () => ({
     transitionPrevHeight: 0,
   }),
-  watch: {
-    /*
-    $route: function (to, from) {
-      if (to.path !== from.path) {
-        this.pageScrollY = 0;
-        this.pageScrollPreY = 0;
-      }
-    },
-    */
-  },
   methods: {
     fadeBeforeLeave(element) {
       this.transitionPrevHeight = getComputedStyle(element).height;
@@ -56,13 +46,15 @@ export default {
     },
     scrollBar() {
       return (
-        (this.pageScrollY / (this.pageScrollTh * pageScrollRouterPathsNum)) *
+        (this.pageScrollY /
+          (this.pageScrollTh * this.pageScrollRouterPathsNum)) *
         100
       );
     },
   },
   mounted() {
     this.pageScrollInit();
+    console.log(this.pageScrollCurrentPathNum);
   },
 };
 </script>

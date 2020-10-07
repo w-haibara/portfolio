@@ -69,6 +69,7 @@ export default {
         },
         pageScrollInit() {
             this.pageScrollCurrentPathNum = this.pageScrollRouterPaths.indexOf(this.$route.path.slice(1));
+            this.pageScrollY = this.pageScrollTh * this.pageScrollCurrentPathNum;
             document.addEventListener("keydown", this.pageScrollKeyMove);
             document.addEventListener("wheel", this.pageScrollWheelMove, { passive: false });
         }

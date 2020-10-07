@@ -13,6 +13,12 @@ export default {
         pageScrollRouterPathsLen: function () {
             return this.pageScrollRouterPaths.length;
         },
+        pageScrollWheelAccuracy: function () {
+            return 100
+        },
+        pageScrollTh: function () {
+            return 8;
+        },
     },
     methods: {
         pageScrollGetRouterPath(num) {
@@ -45,29 +51,26 @@ export default {
                     break;
             }
         },
-        pageScrollWheelMove(y) {
-            const th = 450;
-            if (y < -th) {
-                this.pageScrollY = 0;
-                this.pageScrollPrev();
-            } else if (y > th) {
-                this.pageScrollY = 0;
-                this.pageScrollNext();
-            }
-        },
-        pageScrollIntegral(event) {
+        pageScrollWheelMove(event) {
             event.preventDefault();
-            const y = event.deltaY;
-            if (y * this.pageScrollPreY >= 0) {
+            const y = event.deltaY / this.pageScrollWheelAccuracy;
+            if (this.pageScrollCurrentPathNum == 0) {
+                this.pageScrollY = Math.max(this.pageScrollY + y, 0);
+            } else if (this.pageScrollCurrentPathNum == this.pageScrollRouterPathsLen - 1) {
+                this.pageScrollY = Math.min(this.pageScrollY + y, this.pageScrollY + this.pageScrollTh);
+            } else {
                 this.pageScrollY += y;
             }
-            this.pageScrollPreY = y;
-            this.pageScrollWheelMove(this.pageScrollY);
+            if (this.pageScrollY < this.pageScrollTh * Math.max(this.pageScrollCurrentPathNum, 0)) {
+                this.pageScrollPrev();
+            } else if (this.pageScrollY > this.pageScrollTh * Math.min(this.pageScrollCurrentPathNum + 1, this.pageScrollRouterPathsLen)) {
+                this.pageScrollNext();
+            }
         },
         pageScrollInit() {
             this.pageScrollCurrentPathNum = this.pageScrollRouterPaths.indexOf(this.$route.path.slice(1));
             document.addEventListener("keydown", this.pageScrollKeyMove);
-            document.addEventListener("wheel", this.pageScrollIntegral, { passive: false });
+            document.addEventListener("wheel", this.pageScrollWheelMove, { passive: false });
         }
     },
 }

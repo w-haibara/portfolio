@@ -1,12 +1,19 @@
 <template>
   <v-app>
     <v-main>
+      <v-spacer></v-spacer>
+      <v-progress-linear
+        :value="scrollBar()"
+        color="grey darken-2"
+        striped
+        height="1vh"
+      ></v-progress-linear>
       <transition
         name="fade"
         mode="out-in"
-        @beforeLeave="beforeLeave"
-        @enter="enter"
-        @afterEnter="afterEnter"
+        @beforeLeave="fadeBeforeLeave"
+        @enter="fadeEnter"
+        @afterEnter="fadeAfterEnter"
       >
         <router-view />
       </transition>
@@ -15,27 +22,40 @@
 </template>
 
 <script>
-import BtnEvent from "@/mixins/BtnEvent";
+import PageScroll from "@/mixins/PageScroll";
 
 export default {
   name: "w-haibara",
-  mixins: [BtnEvent],
+  mixins: [PageScroll],
   data: () => ({
     transitionPrevHeight: 0,
   }),
+  watch: {
+    /*
+    $route: function (to, from) {
+      if (to.path !== from.path) {
+        this.pageScrollY = 0;
+        this.pageScrollPreY = 0;
+      }
+    },
+    */
+  },
   methods: {
-    beforeLeave(element) {
+    fadeBeforeLeave(element) {
       this.transitionPrevHeight = getComputedStyle(element).height;
     },
-    enter(element) {
+    fadeEnter(element) {
       const { height } = getComputedStyle(element);
       element.style.height = this.transitionPrevHeight;
       setTimeout(() => {
         element.style.height = height;
       });
     },
-    afterEnter(element) {
+    fadeAfterEnter(element) {
       element.style.height = "auto";
+    },
+    scrollBar() {
+      return (this.pageScrollY / (this.pageScrollTh * 3)) * 100;
     },
   },
   mounted() {

@@ -86,6 +86,7 @@ export default {
         href: "https://www.security-camp.or.jp/minicamp/hokkaido2020.html",
       },
     ],
+    height: 0,
   }),
 };
 </script>

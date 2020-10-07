@@ -1,7 +1,9 @@
 
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '@/views/Home.vue'
+import Profile from '@/views/Profile.vue'
+import Works from '@/views/Works.vue'
+import Slides from '@/views/Slides.vue'
 
 Vue.use(VueRouter)
 
@@ -10,8 +12,22 @@ export default new VueRouter({
     routes: [
         {
             path: '/',
-            name: 'Home',
-            component: Home
+            redirect: '/profile'
+        },
+        {
+            path: '/profile',
+            name: 'Profile',
+            component: Profile
+        },
+        {
+            path: '/works',
+            name: 'Works',
+            component: Works
+        },
+        {
+            path: '/slides',
+            name: 'Slides',
+            component: Slides
         },
     ]
 })

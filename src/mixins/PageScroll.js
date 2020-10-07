@@ -10,7 +10,7 @@ export default {
         pageScrollRouterPaths: function () {
             return ["profile", "works", "slides"];
         },
-        pageScrollRouterPathsLen: function () {
+        pageScrollRouterPathsNum: function () {
             return this.pageScrollRouterPaths.length;
         },
         pageScrollWheelAccuracy: function () {
@@ -35,8 +35,8 @@ export default {
         },
         pageScrollNext() {
             this.pageScrollCurrentPathNum += 1;
-            if (this.pageScrollCurrentPathNum >= this.pageScrollRouterPathsLen) {
-                this.pageScrollCurrentPathNum = this.pageScrollRouterPathsLen - 1
+            if (this.pageScrollCurrentPathNum >= this.pageScrollRouterPathsNum) {
+                this.pageScrollCurrentPathNum = this.pageScrollRouterPathsNum - 1
             } else {
                 router.push(this.pageScrollGetRouterPath(this.pageScrollCurrentPathNum))
             }
@@ -56,14 +56,14 @@ export default {
             const y = event.deltaY / this.pageScrollWheelAccuracy;
             if (this.pageScrollCurrentPathNum == 0) {
                 this.pageScrollY = Math.max(this.pageScrollY + y, 0);
-            } else if (this.pageScrollCurrentPathNum == this.pageScrollRouterPathsLen - 1) {
+            } else if (this.pageScrollCurrentPathNum == this.pageScrollRouterPathsNum - 1) {
                 this.pageScrollY = Math.min(this.pageScrollY + y, this.pageScrollY + this.pageScrollTh);
             } else {
                 this.pageScrollY += y;
             }
             if (this.pageScrollY < this.pageScrollTh * Math.max(this.pageScrollCurrentPathNum, 0)) {
                 this.pageScrollPrev();
-            } else if (this.pageScrollY > this.pageScrollTh * Math.min(this.pageScrollCurrentPathNum + 1, this.pageScrollRouterPathsLen)) {
+            } else if (this.pageScrollY > this.pageScrollTh * Math.min(this.pageScrollCurrentPathNum + 1, this.pageScrollRouterPathsNum)) {
                 this.pageScrollNext();
             }
         },

@@ -55,7 +55,10 @@ export default {
       element.style.height = "auto";
     },
     scrollBar() {
-      return (this.pageScrollY / (this.pageScrollTh * 3)) * 100;
+      return (
+        (this.pageScrollY / (this.pageScrollTh * pageScrollRouterPathsNum)) *
+        100
+      );
     },
   },
   mounted() {

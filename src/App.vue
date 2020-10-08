@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar app absolute color="white" elevate-on-scroll>
+    <v-app-bar app color="white" dense flat fixed>
       <v-progress-linear
         :value="scrollBar()"
         color="grey darken-2"

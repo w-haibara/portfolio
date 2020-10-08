@@ -1,13 +1,14 @@
 <template>
   <v-app>
-    <v-main>
-      <v-spacer></v-spacer>
+    <v-app-bar app absolute color="white" elevate-on-scroll>
       <v-progress-linear
         :value="scrollBar()"
         color="grey darken-2"
         striped
         height="1vh"
       ></v-progress-linear>
+    </v-app-bar>
+    <v-main>
       <transition
         name="fade"
         mode="out-in"
@@ -64,7 +65,9 @@ export default {
 .fade-leave-active {
   transition-duration: 0.3s;
   transition-property: opacity;
+  transition-property: height, opacity;
   transition-timing-function: ease;
+  overflow: hidden;
 }
 
 .fade-enter,

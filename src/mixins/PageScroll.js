@@ -52,7 +52,7 @@ export default {
             }
         },
         pageScrollWheelMove(event) {
-            event.preventDefault();
+            //event.preventDefault();
             const y = event.deltaY / this.pageScrollWheelAccuracy;
             if (this.pageScrollCurrentPathNum == 0) {
                 this.pageScrollY = Math.max(this.pageScrollY + y, 0);

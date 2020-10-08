@@ -1,12 +1,11 @@
 <template>
   <v-app>
     <v-app-bar app color="white" dense flat fixed>
-      <v-progress-linear
-        :value="scrollBar()"
-        color="grey darken-2"
-        striped
-        height="1vh"
-      ></v-progress-linear>
+      <v-tabs color="basil" grow>
+        <v-tab v-for="link in links" :key="link.to" :to="link.to">
+          {{ link.name }}
+        </v-tab>
+      </v-tabs>
     </v-app-bar>
     <v-main>
       <transition
@@ -23,14 +22,29 @@
 </template>
 
 <script>
-import PageScroll from "@/mixins/PageScroll";
-
 export default {
   name: "w-haibara",
-  mixins: [PageScroll],
   data: () => ({
     transitionPrevHeight: 0,
   }),
+  computed: {
+    links: function () {
+      return [
+        {
+          name: "Profile",
+          to: "/profile",
+        },
+        {
+          name: "Works",
+          to: "/works",
+        },
+        {
+          name: "Slides",
+          to: "/slides",
+        },
+      ];
+    },
+  },
   methods: {
     fadeBeforeLeave(element) {
       this.transitionPrevHeight = getComputedStyle(element).height;
@@ -45,18 +59,8 @@ export default {
     fadeAfterEnter(element) {
       element.style.height = "auto";
     },
-    scrollBar() {
-      return (
-        (this.pageScrollY /
-          (this.pageScrollTh * this.pageScrollRouterPathsNum)) *
-        100
-      );
-    },
   },
-  mounted() {
-    this.pageScrollInit();
-    console.log(this.pageScrollCurrentPathNum);
-  },
+  mounted() {},
 };
 </script>
 

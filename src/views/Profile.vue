@@ -7,7 +7,7 @@
           <h1 class="font-weight-medium">Profile</h1>
           <h2 class="font-weight-light">灰原 渉 (HAIBARA Wataru)</h2>
           <v-spacer />
-          <p class="font-weight-light" style="font-size: large">
+          <p class="font-weight-light">
             室蘭工業大学 情報電子工学系学科
             3年。LOCAL学生部部長として、北海道の技術系学生コミュニティを応援している。
             セキュリティ・ミニキャンプ in 北海道 2018・2019に参加。 SecHack365

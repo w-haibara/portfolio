@@ -7,15 +7,17 @@
           <h1 class="font-weight-medium">Profile</h1>
           <h2 class="font-weight-light">灰原 渉 (HAIBARA Wataru)</h2>
           <v-spacer />
-          <p class="paragraph font-weight-light">
-            幼少期の重機やロボットへの憧れから始まり、 成長と共に機械 / 電気 /
-            電子と興味が移ろい、 大学生となった今では情報技術に集中している。
-            また、地元 北海道の大学に進学してからは、道内のITコミュニティLOCAL
-            での学生部の運営や、学内での勉強会開催など、コミュニティ活動に注力している。
-          </p>
-          <p class="paragraph font-weight-light">
-          技術的には、
-          </p>
+          <div class="paragraph font-weight-light">
+            <p>
+              電子と興味が移ろい、
+              大学生となった今では情報技術に集中しています。
+              また、地元である北海道の大学に進学してからは、道内のITコミュニティ
+              LOCAL
+              での学生部の運営や、学内での勉強会開催など、コミュニティ活動に注力しています。
+              技術的には、運用の自動化・セキュリティに興味を持っています。
+              運用技術や基盤技術、あるいは社内システムの開発・改善に従事したいと考えています。
+            </p>
+          </div>
         </v-flex>
         <v-flex>
           <v-list dense>

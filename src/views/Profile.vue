@@ -7,13 +7,17 @@
           <h1 class="font-weight-medium">Profile</h1>
           <h2 class="font-weight-light">灰原 渉 (HAIBARA Wataru)</h2>
           <v-spacer />
-          <p class="font-weight-light" style="font-size: large">
-            室蘭工業大学 情報電子工学系学科
-            3年。LOCAL学生部部長として、北海道の技術系学生コミュニティを応援している。
-            セキュリティ・ミニキャンプ in 北海道 2018・2019に参加。 SecHack365
-            2019では「IoT用途のSoC
-            FPGA向けセキュリティ機構」というテーマに取り組んだ。
-          </p>
+          <div class="paragraph font-weight-light">
+            <p>
+              電子と興味が移ろい、
+              大学生となった今では情報技術に集中しています。
+              また、地元である北海道の大学に進学してからは、道内のITコミュニティ
+              LOCAL
+              での学生部の運営や、学内での勉強会開催など、コミュニティ活動に注力しています。
+              技術的には、運用の自動化・セキュリティに興味を持っています。
+              運用技術や基盤技術、あるいは社内システムの開発・改善に従事したいと考えています。
+            </p>
+          </div>
         </v-flex>
         <v-flex>
           <v-list dense>
@@ -45,6 +49,9 @@
                     >
                       {{ item.text }}
                     </span>
+                    <v-icon color="blue-grey darken-5" x-small right
+                      >fas fa-external-link-alt</v-icon
+                    >
                   </v-list-item-title>
                 </v-list-item-content>
               </v-list-item>
@@ -90,3 +97,9 @@ export default {
   }),
 };
 </script>
+
+<style scoped>
+.paragraph {
+  text-indent: 1em;
+}
+</style>

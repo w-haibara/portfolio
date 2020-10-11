@@ -1,13 +1,13 @@
 <template>
   <v-app>
+    <v-app-bar app color="white" dense flat fixed>
+      <v-tabs color="basil" grow>
+        <v-tab v-for="link in links" :key="link.to" :to="link.to">
+          {{ link.name }}
+        </v-tab>
+      </v-tabs>
+    </v-app-bar>
     <v-main>
-      <v-spacer></v-spacer>
-      <v-progress-linear
-        :value="scrollBar()"
-        color="grey darken-2"
-        striped
-        height="1vh"
-      ></v-progress-linear>
       <transition
         name="fade"
         mode="out-in"
@@ -22,23 +22,28 @@
 </template>
 
 <script>
-import PageScroll from "@/mixins/PageScroll";
-
 export default {
   name: "w-haibara",
-  mixins: [PageScroll],
   data: () => ({
     transitionPrevHeight: 0,
   }),
-  watch: {
-    /*
-    $route: function (to, from) {
-      if (to.path !== from.path) {
-        this.pageScrollY = 0;
-        this.pageScrollPreY = 0;
-      }
+  computed: {
+    links: function () {
+      return [
+        {
+          name: "Profile",
+          to: "/profile",
+        },
+        {
+          name: "Works",
+          to: "/works",
+        },
+        {
+          name: "Slides",
+          to: "/slides",
+        },
+      ];
     },
-    */
   },
   methods: {
     fadeBeforeLeave(element) {
@@ -54,13 +59,8 @@ export default {
     fadeAfterEnter(element) {
       element.style.height = "auto";
     },
-    scrollBar() {
-      return (this.pageScrollY / (this.pageScrollTh * 3)) * 100;
-    },
   },
-  mounted() {
-    this.pageScrollInit();
-  },
+  mounted() {},
 };
 </script>
 
@@ -69,7 +69,9 @@ export default {
 .fade-leave-active {
   transition-duration: 0.3s;
   transition-property: opacity;
+  transition-property: height, opacity;
   transition-timing-function: ease;
+  overflow: hidden;
 }
 
 .fade-enter,

@@ -49,6 +49,9 @@
                     >
                       {{ item.text }}
                     </span>
+                    <v-icon color="blue-grey darken-5" x-small right
+                      >fas fa-external-link-alt</v-icon
+                    >
                   </v-list-item-title>
                 </v-list-item-content>
               </v-list-item>

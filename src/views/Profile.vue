@@ -4,26 +4,24 @@
     <v-container>
       <v-layout wrap>
         <v-flex>
-          <h1 class="font-weight-medium">Profile</h1>
+          <h1>Profile</h1>
           <h2 class="font-weight-light">灰原 渉 (HAIBARA Wataru)</h2>
-          <v-spacer />
-          <div class="paragraph font-weight-light">
-            <p>
-              幼少期の重機やロボットへの憧れから始まり、 成長と共に機械 / 電気 /
-              電子と興味が移ろい、
-              大学生となった今では情報技術に集中しています。
-              また、地元である北海道の大学に進学してからは、道内のITコミュニティ
-              LOCAL
-              での学生部の運営や、学内での勉強会開催など、コミュニティ活動に注力しています。
-              技術的には、運用の自動化・セキュリティに興味を持っています。
-              運用技術や基盤技術、あるいは社内システムの開発・改善に従事したいと考えています。
-            </p>
-          </div>
+          <p class="paragraph font-weight-light">
+            幼少期の重機やロボットへの憧れから始まり、 成長と共に機械 / 電気 /
+            電子と興味が移ろい、 大学生となった今では情報技術に集中しています。
+            また、地元である北海道の大学に進学してからは、道内のITコミュニティ
+            LOCAL
+            での学生部の運営や、学内での勉強会開催など、コミュニティ活動に注力しています。
+          </p>
+          <p class="paragraph font-weight-light">
+            技術的には、運用の自動化・セキュリティに興味を持っています。
+            運用技術や基盤技術、あるいは社内システムの開発・改善に従事したいと考えています。
+          </p>
         </v-flex>
         <v-flex>
           <v-list dense>
             <v-subheader
-              class="font-weight-light blue-grey--text text--darken-4"
+              class="blue-grey--text text--darken-4"
               style="font-size: large"
               >Activity</v-subheader
             >
@@ -44,15 +42,10 @@
                 </v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-title>
-                    <span
-                      class="font-weight-light blue-grey--text text--darken-4"
-                      style="font-size: large"
-                    >
-                      {{ item.text }}
-                    </span>
-                    <v-icon color="blue-grey darken-5" x-small right
-                      >fas fa-external-link-alt</v-icon
-                    >
+                    {{ item.text }}
+                    <v-icon color="blue-grey darken-5" x-small right>
+                      fas fa-external-link-alt
+                    </v-icon>
                   </v-list-item-title>
                 </v-list-item-content>
               </v-list-item>
@@ -102,5 +95,6 @@ export default {
 <style scoped>
 .paragraph {
   text-indent: 1em;
+  margin: 0;
 }
 </style>

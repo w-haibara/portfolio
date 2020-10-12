@@ -64,7 +64,12 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+@import url("https://fonts.googleapis.com/css?family=Sawarabi+Gothic");
+.v-application {
+  font-family: "Sawarabi Gothic" !important;
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition-duration: 0.3s;

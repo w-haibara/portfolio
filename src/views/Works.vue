@@ -13,7 +13,7 @@
                 flat
                 tile
                 color="grey lighten-4"
-                width="42vh"
+                width="24vw"
               >
                 <v-card-title>
                   <span>

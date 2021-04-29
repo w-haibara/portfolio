@@ -12,9 +12,17 @@
     <v-main>
       <router-view />
     </v-main>
-    <v-footer color="white">
+        <v-footer color="white">
       <v-spacer></v-spacer>
-      <p class="copyright">&copy; {{ now }} w-haibara.</p>
+      <span>source:</span>
+      <a
+        href="https://github.com/w-haibara/portfolio"
+        target="_blank"
+        rel="noopener"
+      >
+        GitHub
+      </a>
+      <span class="copyright ml-5">&copy; {{ now }} w-haibara.</span>
     </v-footer>
   </v-app>
 </template>

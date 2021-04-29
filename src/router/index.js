@@ -1,17 +1,13 @@
-
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Profile from '@/views/Profile.vue'
-import Works from '@/views/Works.vue'
-import Slides from '@/views/Slides.vue'
-import Contact from '@/views/Contact.vue'
+import Links from '@/views/Links.vue'
 
 Vue.use(VueRouter)
 
 export default new VueRouter({
     mode: 'hash',
-    routes: [
-        {
+    routes: [{
             path: '/',
             redirect: '/profile'
         },
@@ -21,19 +17,9 @@ export default new VueRouter({
             component: Profile
         },
         {
-            path: '/works',
-            name: 'Works',
-            component: Works
-        },
-        {
-            path: '/slides',
-            name: 'Slides',
-            component: Slides
-        },
-        {
-            path: '/contact',
-            name: 'Contact',
-            component: Contact
+            path: '/links',
+            name: 'Links',
+            component: Links
         },
     ]
 })

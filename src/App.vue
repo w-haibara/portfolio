@@ -3,7 +3,7 @@
     <v-app-bar app dense flat color="white">
       <v-app-bar-title>w-haibara.com</v-app-bar-title>
       <div>
-        <v-tabs fixed-tabs color="black" class="ml-5">
+        <v-tabs fixed-tabs class="ml-5" color="black">
           <v-tab to="/profile">Profile</v-tab>
           <v-tab to="/links">links</v-tab>
         </v-tabs>

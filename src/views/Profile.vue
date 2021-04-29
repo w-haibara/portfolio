@@ -2,57 +2,48 @@
 <template>
   <v-sheet class="blue-grey--text text--darken-4" height="100%" tile>
     <v-container>
-      <v-layout wrap>
-        <v-flex>
-          <h1>Profile</h1>
-          <h2 class="font-weight-light">灰原 渉 (HAIBARA Wataru)</h2>
-          <p class="paragraph font-weight-light">
-            幼少期の重機やロボットへの憧れから始まり、 成長と共に機械 / 電気 /
-            電子と興味が移ろい、 大学生となった今では情報技術に集中しています。
-            また、地元である北海道の大学に進学してからは、道内のITコミュニティ
-            LOCAL
-            での学生部の運営や、学内での勉強会開催など、コミュニティ活動に注力しています。
-          </p>
-          <p class="paragraph font-weight-light">
-            技術的には、運用の自動化・セキュリティに興味を持っています。
-            運用技術や基盤技術、あるいは社内システムの開発・改善に従事したいと考えています。
-          </p>
-        </v-flex>
-        <v-flex>
-          <v-list dense>
-            <v-subheader
-              class="blue-grey--text text--darken-4"
-              style="font-size: large"
-              >Activity</v-subheader
-            >
-            <v-list-item-group>
-              <v-list-item
-                v-for="(item, i) in items"
-                :key="i"
-                :href="item.href"
-                target="_blank"
-                rel="noopener"
-                color="blue-grey darken-5"
-              >
-                <v-list-item-icon>
-                  <v-icon
-                    v-text="item.icon"
-                    color="blue-grey darken-5"
-                  ></v-icon>
-                </v-list-item-icon>
-                <v-list-item-content>
-                  <v-list-item-title>
-                    {{ item.text }}
-                    <v-icon color="blue-grey darken-5" x-small right>
-                      fas fa-external-link-alt
-                    </v-icon>
-                  </v-list-item-title>
-                </v-list-item-content>
-              </v-list-item>
-            </v-list-item-group>
-          </v-list>
-        </v-flex>
-      </v-layout>
+      <h1 class="font-weight-light">w-haibara</h1>
+      <div>
+        <p class="paragraph font-weight-meduim">
+          Student learning about information technology. And next year, I will
+          be a software engineer at Tokyo.
+        </p>
+        <p class="paragraph font-weight-meduim">
+          I am interested in the Web, systems programming, and community of
+          engineers.
+        </p>
+      </div>
+
+      <v-list dense>
+        <v-subheader
+          class="blue-grey--text text--darken-4 font-weight-meduim"
+          style="font-size: large"
+          >Activity</v-subheader
+        >
+        <v-list-item-group>
+          <v-list-item
+            v-for="(item, i) in items"
+            :key="i"
+            :href="item.href"
+            target="_blank"
+            rel="noopener"
+            color="blue-grey darken-5"
+          >
+            <v-list-item-icon>
+              <v-icon v-text="item.icon" color="blue-grey darken-5"></v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title class="wrap-text">
+                {{ item.duration }}
+                <span class="font-weight-bold">{{ item.text }}</span>
+                <v-icon color="blue-grey darken-5" x-small right>
+                  fas fa-external-link-alt
+                </v-icon>
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
     </v-container>
   </v-sheet>
 </template>
@@ -62,29 +53,36 @@ export default {
   data: () => ({
     items: [
       {
-        text: "室蘭工業大学 情報電子工学系学科",
-        icon: "mdi-school",
-        href: "https://www.muroran-it.ac.jp/",
+        text: "Participate in internship at Hatena Co., Ltd.",
+        icon: "mdi-fountain-pen-tip",
+        href: "https://hatenacorp.jp/intern2020/first",
       },
       {
-        text: "一般社団法人LOCAL 学生部 部長",
-        icon: "mdi-human-greeting",
-        href: "https://local.or.jp/",
-      },
-      {
-        text: "SecHack365 2019年度 トレーニー",
+        text:
+          "Lecture about vulnerability of C code at Security Mini Camp in Hokkaido",
         icon: "mdi-security",
-        href: "http://sechack365.nict.go.jp/",
+        href: "https://www.security-camp.or.jp/minicamp/hokkaido2020.html",
       },
       {
-        text: "JANOG45 ミーティング プログラム発表",
+        text: "Gave a presentation at JANOG45",
         icon: "mdi-microphone-variant",
         href: "https://www.janog.gr.jp/meeting/janog45/newsletter/iot",
       },
       {
-        text: "セキュリティ・ミニキャンプ in 北海道 2020 講師",
+        text: "Survey and develop about IoT Security at SecHack365",
         icon: "mdi-security",
-        href: "https://www.security-camp.or.jp/minicamp/hokkaido2020.html",
+        href: "http://sechack365.nict.go.jp/",
+      },
+      {
+        text: "LOCAL Students member(一般社団法人LOCAL)",
+        icon: "mdi-human-greeting",
+        href: "https://local.or.jp/",
+      },
+      {
+        text:
+          "Learning information technology at Muroran Institute of Technology",
+        icon: "mdi-school",
+        href: "https://www.muroran-it.ac.jp/",
       },
     ],
     height: 0,
@@ -96,5 +94,10 @@ export default {
 .paragraph {
   text-indent: 1em;
   margin: 0;
+}
+
+.wrap-text {
+  word-break: break-all;
+  white-space: normal;
 }
 </style>

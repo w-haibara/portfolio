@@ -3,7 +3,7 @@
     <v-app-bar app dense flat color="white">
       <v-app-bar-title>w-haibara.com</v-app-bar-title>
       <div>
-        <v-tabs fixed-tabs color="black">
+        <v-tabs fixed-tabs color="black" class="ml-5">
           <v-tab to="/profile">Profile</v-tab>
           <v-tab to="/links">links</v-tab>
         </v-tabs>
@@ -12,13 +12,19 @@
     <v-main>
       <router-view />
     </v-main>
+    <v-footer color="white">
+      <v-spacer></v-spacer>
+      <p class="copyright">&copy; {{ now }} w-haibara.</p>
+    </v-footer>
   </v-app>
 </template>
 
 <script>
 export default {
   name: "w-haibara",
-  data: () => ({}),
+  data: () => ({
+    now: "",
+  }),
   computed: {
     links: function () {
       return [
@@ -29,8 +35,10 @@ export default {
       ];
     },
   },
-  methods: {},
-  mounted() {},
+  created() {
+    const d = new Date();
+    this.now = d.getFullYear();
+  },
 };
 </script>
 

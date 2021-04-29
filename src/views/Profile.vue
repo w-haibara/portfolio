@@ -1,6 +1,6 @@
 
 <template>
-  <v-sheet class="blue-grey--text text--darken-4" height="100%" tile>
+  <v-sheet class="blue-grey--text text--darken-4" tile>
     <v-container>
       <h1 class="font-weight-light">w-haibara</h1>
       <div>

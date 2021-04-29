@@ -12,7 +12,7 @@
     <v-main>
       <router-view />
     </v-main>
-        <v-footer color="white">
+    <v-footer color="white">
       <v-spacer></v-spacer>
       <span>source:</span>
       <a

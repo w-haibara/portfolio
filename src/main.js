@@ -10,7 +10,7 @@ Vue.config.productionTip = false
 Vue.use(VueAxios, axios);
 
 new Vue({
-  router,
-  vuetify,
-  render: h => h(App)
+    router,
+    vuetify,
+    render: h => h(App)
 }).$mount('#app')

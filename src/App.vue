@@ -1,13 +1,17 @@
 <template>
   <v-app>
-    <v-app-bar app dense flat color="white">
-      <v-toolbar-title>w-haibara.com</v-toolbar-title>
-      <div>
-        <v-tabs fixed-tabs class="ml-5" color="black">
-          <v-tab to="/profile">profile</v-tab>
-          <v-tab to="/logs">logs</v-tab>
-        </v-tabs>
-      </div>
+    <v-app-bar app absolute dense flat color="white">
+      <v-layout row>
+        <v-flex sm2>
+          <v-toolbar-title class="px-3">w-haibara.com</v-toolbar-title>
+        </v-flex>
+        <v-flex sm1>
+          <router-link to="/profile">Profile</router-link>
+        </v-flex>
+        <v-flex sm1>
+          <router-link to="/logs">Logs</router-link>
+        </v-flex>
+      </v-layout>
     </v-app-bar>
     <v-main>
       <router-view />

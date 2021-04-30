@@ -90,3 +90,10 @@ export default {
   }),
 };
 </script>
+
+<style scoped>
+.wrap-text {
+  word-break: break-all;
+  white-space: normal;
+}
+</style>

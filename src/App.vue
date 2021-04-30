@@ -1,11 +1,11 @@
 <template>
   <v-app>
     <v-app-bar app dense flat color="white">
-      <v-app-bar-title>w-haibara.com</v-app-bar-title>
+      <v-toolbar-title>w-haibara.com</v-toolbar-title>
       <div>
         <v-tabs fixed-tabs class="ml-5" color="black">
-          <v-tab to="/profile">Profile</v-tab>
-          <v-tab to="/links">links</v-tab>
+          <v-tab to="/profile">profile</v-tab>
+          <v-tab to="/logs">logs</v-tab>
         </v-tabs>
       </div>
     </v-app-bar>

@@ -44,6 +44,8 @@
 </template>
 
 <script>
+import lscache from "lscache";
+
 export default {
   data: () => ({
     slides: {
@@ -56,14 +58,21 @@ export default {
     slidesLoaded: false,
   }),
   created() {
-    this.axios
-      .get(
-        "https://script.google.com/macros/s/AKfycbzU0GpoaO6yzz-S-7qUBWDA7KYlfw2-VKMLVP6VfrpfkYPBaGUtB77u6O10KfnfMrjG/exec"
-      )
-      .then((response) => {
-        this.slides = response.data;
-        this.slidesLoaded = true;
-      });
+    const key = "keyName";
+    if (!lscache.supported() || !lscache.get(key)) {
+      this.axios
+        .get(
+          "https://script.google.com/macros/s/AKfycbzU0GpoaO6yzz-S-7qUBWDA7KYlfw2-VKMLVP6VfrpfkYPBaGUtB77u6O10KfnfMrjG/exec"
+        )
+        .then((response) => {
+          this.slides = response.data;
+          lscache.set(key, response.data, 1440);
+          this.slidesLoaded = true;
+        });
+    } else {
+      this.slides = lscache.get(key);
+      this.slidesLoaded = true;
+    }
   },
 };
 </script>

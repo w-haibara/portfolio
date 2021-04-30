@@ -20,13 +20,13 @@
       <v-spacer></v-spacer>
       <span>source:</span>
       <a
-        href="https://github.com/w-haibara/portfolio"
+        href="https://github.com/w-haibara/w-haibara.com"
         target="_blank"
         rel="noopener"
       >
         GitHub
       </a>
-      <span class="copyright ml-5">&copy; {{ now }} w-haibara.</span>
+      <span class="copyright ml-5">&copy; 2021 w-haibara</span>
     </v-footer>
   </v-app>
 </template>
@@ -34,9 +34,6 @@
 <script>
 export default {
   name: "w-haibara",
-  data: () => ({
-    now: "",
-  }),
   computed: {
     links: function () {
       return [
@@ -46,10 +43,6 @@ export default {
         },
       ];
     },
-  },
-  created() {
-    const d = new Date();
-    this.now = d.getFullYear();
   },
 };
 </script>

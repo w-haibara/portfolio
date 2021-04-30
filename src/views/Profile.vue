@@ -14,81 +14,48 @@
         </p>
       </div>
 
-      <v-list dense>
-        <v-subheader
-          class="blue-grey--text text--darken-4 font-weight-meduim"
-          style="font-size: large"
-          >Activity</v-subheader
-        >
-        <v-list-item-group>
-          <v-list-item
-            v-for="(item, i) in items"
-            :key="i"
-            :href="item.href"
+      <ul class="py-5">
+        <li>
+          Twitter:
+          <a
+            href="https://twitter.com/w_haibara"
             target="_blank"
             rel="noopener"
-            color="blue-grey darken-5"
           >
-            <v-list-item-icon>
-              <v-icon v-text="item.icon" color="blue-grey darken-5"></v-icon>
-            </v-list-item-icon>
-            <v-list-item-content>
-              <v-list-item-title class="wrap-text">
-                {{ item.duration }}
-                <span class="font-weight-bold">{{ item.text }}</span>
-                <v-icon color="blue-grey darken-5" x-small right>
-                  fas fa-external-link-alt
-                </v-icon>
-              </v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list-item-group>
-      </v-list>
+            @w_haibara
+          </a>
+        </li>
+        <li>
+          GitHub:
+          <a href="http://github.com/w-haibara" target="_blank" rel="noopener">
+            w-haibara
+          </a>
+        </li>
+        <li>
+          Facebook:
+          <a
+            href="https://www.facebook.com/wataru.haibara.923"
+            target="_blank"
+            rel="noopener"
+          >
+            Wataru Haibara
+          </a>
+        </li>
+        <li>
+          Blog:
+          <a
+            href=" https://haibara-works.hatenablog.com"
+            target="_blank"
+            rel="noopener"
+          >
+            id:w_haibara
+          </a>
+        </li>
+        <li>Mail: haibara[at]local.or.jp</li>
+      </ul>
     </v-container>
   </v-sheet>
 </template>
-
-<script>
-export default {
-  data: () => ({
-    items: [
-      {
-        text: "Participate in internship at Hatena Co., Ltd.",
-        icon: "mdi-fountain-pen-tip",
-        href: "https://hatenacorp.jp/intern2020/first",
-      },
-      {
-        text:
-          "Lecture about vulnerability of C code at Security Mini Camp in Hokkaido",
-        icon: "mdi-security",
-        href: "https://www.security-camp.or.jp/minicamp/hokkaido2020.html",
-      },
-      {
-        text: "Gave a presentation at JANOG45",
-        icon: "mdi-microphone-variant",
-        href: "https://www.janog.gr.jp/meeting/janog45/newsletter/iot",
-      },
-      {
-        text: "Survey and develop about IoT Security at SecHack365",
-        icon: "mdi-security",
-        href: "http://sechack365.nict.go.jp/",
-      },
-      {
-        text: "LOCAL Students member(一般社団法人LOCAL)",
-        icon: "mdi-human-greeting",
-        href: "https://local.or.jp/",
-      },
-      {
-        text:
-          "Learning information technology at Muroran Institute of Technology",
-        icon: "mdi-school",
-        href: "https://www.muroran-it.ac.jp/",
-      },
-    ],
-    height: 0,
-  }),
-};
-</script>
 
 <style scoped>
 .paragraph {
@@ -99,5 +66,17 @@ export default {
 .wrap-text {
   word-break: break-all;
   white-space: normal;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.3s;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+a:hover {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
 }
 </style>

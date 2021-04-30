@@ -1,12 +1,9 @@
 <template>
   <v-app>
-    <v-app-bar app dense flat color="white">
-      <v-app-bar-title>w-haibara.com</v-app-bar-title>
-      <div>
-        <v-tabs fixed-tabs class="ml-5" color="black">
-          <v-tab to="/profile">Profile</v-tab>
-          <v-tab to="/links">links</v-tab>
-        </v-tabs>
+    <v-app-bar app absolute dense flat color="white">
+      <v-toolbar-title class="px-3">w-haibara.com</v-toolbar-title>
+      <div v-for="(link, i) in links" :key="i">
+        <router-link class="pl-3" :to="link.to">{{ link.name }}</router-link>
       </div>
     </v-app-bar>
     <v-main>
@@ -16,13 +13,13 @@
       <v-spacer></v-spacer>
       <span>source:</span>
       <a
-        href="https://github.com/w-haibara/portfolio"
+        href="https://github.com/w-haibara/w-haibara.com"
         target="_blank"
         rel="noopener"
       >
         GitHub
       </a>
-      <span class="copyright ml-5">&copy; {{ now }} w-haibara.</span>
+      <span class="copyright ml-5">&copy; 2021 w-haibara</span>
     </v-footer>
   </v-app>
 </template>
@@ -30,9 +27,6 @@
 <script>
 export default {
   name: "w-haibara",
-  data: () => ({
-    now: "",
-  }),
   computed: {
     links: function () {
       return [
@@ -43,10 +37,31 @@ export default {
       ];
     },
   },
-  created() {
-    const d = new Date();
-    this.now = d.getFullYear();
-  },
+};
+</script>
+
+<script>
+export default {
+  data: () => ({
+    links: [
+      {
+        to: "/profile",
+        name: "Profile",
+      },
+      {
+        to: "/logs",
+        name: "Logs",
+      },
+      {
+        to: "/works",
+        name: "Works",
+      },
+      {
+        to: "/slides",
+        name: "Slides",
+      },
+    ],
+  }),
 };
 </script>
 

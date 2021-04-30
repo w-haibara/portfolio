@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Profile from '@/views/Profile.vue'
 import Logs from '@/views/Logs.vue'
+import Works from '@/views/Works.vue'
 
 Vue.use(VueRouter)
 
@@ -20,6 +21,11 @@ export default new VueRouter({
             path: '/logs',
             name: 'Logs',
             component: Logs
+        },
+        {
+            path: '/works',
+            name: 'Works',
+            component: Works
         },
     ]
 })

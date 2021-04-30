@@ -22,7 +22,9 @@
             </v-list-item-icon>
             <v-list-item-content>
               <v-list-item-title class="wrap-text">
-                <span class="font-weight-bold">{{ log.text }}</span>
+                <span class="font-weight-medium" style="font-size: medium">
+                  {{ log.text }}
+                </span>
                 <v-icon color="blue-grey darken-5" x-small right>
                   fas fa-external-link-alt
                 </v-icon>
@@ -49,7 +51,7 @@ export default {
           },
           {
             text:
-              "Lecture about vulnerability of C code at Security Mini Camp in Hokkaido",
+              "Lecture about vulnerability of C code at Security Mini Camp in Hokkaido.",
             icon: "mdi-security",
             href: "https://www.security-camp.or.jp/minicamp/hokkaido2020.html",
           },
@@ -59,12 +61,12 @@ export default {
         year: 2019,
         logs: [
           {
-            text: "Gave a presentation at JANOG45",
+            text: "Gave a presentation at JANOG45.",
             icon: "mdi-microphone-variant",
             href: "https://www.janog.gr.jp/meeting/janog45/newsletter/iot",
           },
           {
-            text: "Survey and develop about IoT Security at SecHack365",
+            text: "Survey and develop about IoT Security at SecHack365.",
             icon: "mdi-security",
             href: "http://sechack365.nict.go.jp/",
           },
@@ -74,13 +76,13 @@ export default {
         year: 2018,
         logs: [
           {
-            text: "Member of LOCAL Students(一般社団法人LOCAL)",
+            text: "Member of LOCAL Students(一般社団法人LOCAL).",
             icon: "mdi-human-greeting",
             href: "https://local.or.jp/",
           },
           {
             text:
-              "Learn information technology at Muroran Institute of Technology (~2022)",
+              "Learn information technology at Muroran Institute of Technology (~2022).",
             icon: "mdi-school",
             href: "https://www.muroran-it.ac.jp/",
           },

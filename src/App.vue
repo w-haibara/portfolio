@@ -1,17 +1,10 @@
 <template>
   <v-app>
     <v-app-bar app absolute dense flat color="white">
-      <v-layout row>
-        <v-flex sm2>
-          <v-toolbar-title class="px-3">w-haibara.com</v-toolbar-title>
-        </v-flex>
-        <v-flex sm1>
-          <router-link to="/profile">Profile</router-link>
-        </v-flex>
-        <v-flex sm1>
-          <router-link to="/logs">Logs</router-link>
-        </v-flex>
-      </v-layout>
+      <v-toolbar-title class="px-3">w-haibara.com</v-toolbar-title>
+      <div v-for="(link, i) in links" :key="i">
+        <router-link class="pl-3" :to="link.to">{{ link.name }}</router-link>
+      </div>
     </v-app-bar>
     <v-main>
       <router-view />
@@ -44,6 +37,27 @@ export default {
       ];
     },
   },
+};
+</script>
+
+<script>
+export default {
+  data: () => ({
+    links: [
+      {
+        to: "/profile",
+        name: "Profile",
+      },
+      {
+        to: "/logs",
+        name: "Logs",
+      },
+      {
+        to: "/works",
+        name: "Works",
+      },
+    ],
+  }),
 };
 </script>
 

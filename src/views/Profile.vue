@@ -57,12 +57,6 @@
   </v-sheet>
 </template>
 
-<script>
-export default {
-  data: () => ({}),
-};
-</script>
-
 <style scoped>
 .paragraph {
   text-indent: 1em;

@@ -58,7 +58,7 @@ export default {
     slidesLoaded: false,
   }),
   created() {
-    const key = "keyName";
+    const key = "slidesData";
     if (!lscache.supported() || !lscache.get(key)) {
       this.axios
         .get(

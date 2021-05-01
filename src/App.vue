@@ -1,7 +1,11 @@
 <template>
   <v-app>
     <v-app-bar app absolute dense flat color="white">
-      <v-toolbar-title class="px-3">w-haibara.com</v-toolbar-title>
+      <v-toolbar-title class="px-3">
+        <router-link to="/" class="text-decoration-none black--text">
+          w-haibara.com
+        </router-link>
+      </v-toolbar-title>
       <div v-for="(link, i) in links" :key="i">
         <router-link class="pl-3" :to="link.to">{{ link.name }}</router-link>
       </div>

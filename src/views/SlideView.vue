@@ -12,11 +12,7 @@
         </v-layout>
       </v-container>
       <iframe
-        :src="
-          'https://docs.google.com/presentation/d/' +
-          $route.params.id +
-          '/embed?start=false&loop=false&delayms=3000'
-        "
+        :src="iframeURL"
         frameborder="0"
         allowfullscreen="true"
         mozallowfullscreen="true"
@@ -29,14 +25,49 @@
 </template>
 
 <script>
+import lscache from "lscache";
+
 export default {
   data: () => ({
+    slides: [],
     loaded: false,
+    iframeURL: "",
   }),
   methods: {
     load: function () {
       this.loaded = true;
     },
+    setURL: function () {
+      const slide = this.slides.find((elm) => elm.id == this.$route.params.id);
+      if (slide === undefined) {
+        this.$router.push("/NotFound");
+        return;
+      }
+      this.iframeURL =
+        "https://docs.google.com/presentation/d/" +
+        slide.id +
+        "/embed?start=false&loop=false&delayms=3000";
+    },
+  },
+  created() {
+    const key = "slidesData";
+    if (!lscache.supported() || !lscache.get(key)) {
+      console.log("axios get");
+      this.axios
+        .get(
+          "https://script.google.com/macros/s/AKfycbxqV4ImsFGIViEIaN9E2WAQfnFOO7fDTR6K688TZxmxbsaWBjo-oqmAfwog0rJYUAP0/exec"
+        )
+        .then((response) => {
+          this.slides = response.data;
+          lscache.set(key, response.data, 1440);
+          this.setURL();
+          this.loaded = true;
+        });
+    } else {
+      this.slides = lscache.get(key);
+      this.setURL();
+      this.loaded = true;
+    }
   },
 };
 </script>

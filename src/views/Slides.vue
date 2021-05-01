@@ -19,8 +19,8 @@
           <v-list-item-group>
             <v-list-item
               v-for="slide in slides"
-              :key="slide.url"
-              :to="'/slides/' + slide.url"
+              :key="slide.id"
+              :to="'/slides/' + slide.id"
               color="blue-grey darken-5"
             >
               <v-list-item-content>
@@ -48,13 +48,14 @@ import lscache from "lscache";
 
 export default {
   data: () => ({
-    slides: {
-      id: {
+    slides: [
+      {
         title: "",
         url: "",
+        id: "",
         created: "",
       },
-    },
+    ],
     slidesLoaded: false,
   }),
   created() {
@@ -62,7 +63,7 @@ export default {
     if (!lscache.supported() || !lscache.get(key)) {
       this.axios
         .get(
-          "https://script.google.com/macros/s/AKfycbzU0GpoaO6yzz-S-7qUBWDA7KYlfw2-VKMLVP6VfrpfkYPBaGUtB77u6O10KfnfMrjG/exec"
+          "https://script.google.com/macros/s/AKfycbxqV4ImsFGIViEIaN9E2WAQfnFOO7fDTR6K688TZxmxbsaWBjo-oqmAfwog0rJYUAP0/exec"
         )
         .then((response) => {
           this.slides = response.data;

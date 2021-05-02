@@ -36,35 +36,37 @@
 
 <script>
 export default {
-  data: () => ({
-    items: [
-      {
-        title: "unlambda",
-        text: "A toy Unlambda interpreter written in Go.",
-        href: "https://github.com/w-haibara/unlambda",
-      },
-      {
-        title: "osoba",
-        text: "Static site deployment manager.",
-        href: "https://github.com/w-haibara/osoba",
-      },
-      {
-        title: "vtd4",
-        text: "TD4 emulator written in Vue.js with Vuetify.",
-        href: "https://github.com/w-haibara/vtd4",
-      },
-      {
-        title: "syshello",
-        text: "A script for development of Linux system call.",
-        href: "https://github.com/w-haibara/syshello",
-      },
-      {
-        title: "caes",
-        text: "Full scratch implementation of AES-128-CTR for study.",
-        href: "https://github.com/w-haibara/caes",
-      },
-    ],
-  }),
+  computed: {
+    items: function () {
+      return [
+        {
+          title: "unlambda",
+          text: "A toy Unlambda interpreter written in Go.",
+          href: "https://github.com/w-haibara/unlambda",
+        },
+        {
+          title: "osoba",
+          text: "Static site deployment manager.",
+          href: "https://github.com/w-haibara/osoba",
+        },
+        {
+          title: "vtd4",
+          text: "TD4 emulator written in Vue.js with Vuetify.",
+          href: "https://github.com/w-haibara/vtd4",
+        },
+        {
+          title: "syshello",
+          text: "A script for development of Linux system call.",
+          href: "https://github.com/w-haibara/syshello",
+        },
+        {
+          title: "caes",
+          text: "Full scratch implementation of AES-128-CTR for study.",
+          href: "https://github.com/w-haibara/caes",
+        },
+      ];
+    },
+  },
 };
 </script>
 

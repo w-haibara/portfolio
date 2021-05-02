@@ -57,37 +57,24 @@ export default {
     links: function () {
       return [
         {
-          name: "Profile",
           to: "/profile",
+          name: "Profile",
+        },
+        {
+          to: "/logs",
+          name: "Logs",
+        },
+        {
+          to: "/works",
+          name: "Works",
+        },
+        {
+          to: "/slides",
+          name: "Slides",
         },
       ];
     },
   },
-};
-</script>
-
-<script>
-export default {
-  data: () => ({
-    links: [
-      {
-        to: "/profile",
-        name: "Profile",
-      },
-      {
-        to: "/logs",
-        name: "Logs",
-      },
-      {
-        to: "/works",
-        name: "Works",
-      },
-      {
-        to: "/slides",
-        name: "Slides",
-      },
-    ],
-  }),
 };
 </script>
 

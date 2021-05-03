@@ -61,12 +61,10 @@ export default {
           this.slides = response.data;
           lscache.set(key, response.data, 1440);
           this.setURL();
-          this.loaded = true;
         });
     } else {
       this.slides = lscache.get(key);
       this.setURL();
-      this.loaded = true;
     }
   },
 };

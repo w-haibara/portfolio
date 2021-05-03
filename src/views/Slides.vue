@@ -5,12 +5,11 @@
       <div v-if="!slidesLoaded">
         <v-row>
           <v-col cols="6">
-            <v-skeleton-loader type="list-item-two-line"></v-skeleton-loader>
-            <v-skeleton-loader type="list-item-two-line"></v-skeleton-loader>
-            <v-skeleton-loader type="list-item-two-line"></v-skeleton-loader>
-            <v-skeleton-loader type="list-item-two-line"></v-skeleton-loader>
-            <v-skeleton-loader type="list-item-two-line"></v-skeleton-loader>
-            <v-skeleton-loader type="list-item-two-line"></v-skeleton-loader>
+            <v-skeleton-loader
+              type="list-item-two-line"
+              v-for="i in 6"
+              :key="i"
+            ></v-skeleton-loader>
           </v-col>
         </v-row>
       </div>

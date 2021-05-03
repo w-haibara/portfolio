@@ -40,57 +40,60 @@
 
 <script>
 export default {
-  data: () => ({
-    items: [
-      {
-        year: 2020,
-        logs: [
-          {
-            text: "Participate in internship at Hatena Co., Ltd.",
-            icon: "mdi-fountain-pen-tip",
-            href: "https://hatenacorp.jp/intern2020/first",
-          },
-          {
-            text:
-              "Lecture about vulnerability of C code at Security Mini Camp in Hokkaido.",
-            icon: "mdi-security",
-            href: "https://www.security-camp.or.jp/minicamp/hokkaido2020.html",
-          },
-        ],
-      },
-      {
-        year: 2019,
-        logs: [
-          {
-            text: "Gave a presentation at JANOG45.",
-            icon: "mdi-microphone-variant",
-            href: "https://www.janog.gr.jp/meeting/janog45/newsletter/iot",
-          },
-          {
-            text: "Survey and develop about IoT Security at SecHack365.",
-            icon: "mdi-security",
-            href: "http://sechack365.nict.go.jp/",
-          },
-        ],
-      },
-      {
-        year: 2018,
-        logs: [
-          {
-            text: "Member of LOCAL Students(一般社団法人LOCAL).",
-            icon: "mdi-human-greeting",
-            href: "https://local.or.jp/",
-          },
-          {
-            text:
-              "Learn information technology at Muroran Institute of Technology (~2022).",
-            icon: "mdi-school",
-            href: "https://www.muroran-it.ac.jp/",
-          },
-        ],
-      },
-    ],
-  }),
+  computed: {
+    items: function () {
+      return [
+        {
+          year: 2020,
+          logs: [
+            {
+              text: "Participate in internship at Hatena Co., Ltd.",
+              icon: "mdi-fountain-pen-tip",
+              href: "https://hatenacorp.jp/intern2020/first",
+            },
+            {
+              text:
+                "Lecture about vulnerability of C code at Security Mini Camp in Hokkaido.",
+              icon: "mdi-security",
+              href:
+                "https://www.security-camp.or.jp/minicamp/hokkaido2020.html",
+            },
+          ],
+        },
+        {
+          year: 2019,
+          logs: [
+            {
+              text: "Gave a presentation at JANOG45.",
+              icon: "mdi-microphone-variant",
+              href: "https://www.janog.gr.jp/meeting/janog45/newsletter/iot",
+            },
+            {
+              text: "Survey and develop about IoT Security at SecHack365.",
+              icon: "mdi-security",
+              href: "http://sechack365.nict.go.jp/",
+            },
+          ],
+        },
+        {
+          year: 2018,
+          logs: [
+            {
+              text: "Member of LOCAL Students(一般社団法人LOCAL).",
+              icon: "mdi-human-greeting",
+              href: "https://local.or.jp/",
+            },
+            {
+              text:
+                "Learn information technology at Muroran Institute of Technology (~2022).",
+              icon: "mdi-school",
+              href: "https://www.muroran-it.ac.jp/",
+            },
+          ],
+        },
+      ];
+    },
+  },
 };
 </script>
 

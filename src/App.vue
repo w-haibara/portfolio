@@ -1,14 +1,36 @@
 <template>
   <v-app>
     <v-app-bar app absolute dense flat color="white">
+      <v-menu offset-y v-if="$vuetify.breakpoint.xs">
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn icon v-bind="attrs" v-on="on">
+            <v-app-bar-nav-icon></v-app-bar-nav-icon>
+          </v-btn>
+        </template>
+        <v-list>
+          <v-list-item v-for="(link, i) in links" :key="i">
+            <v-list-item-title>
+              <router-link class="pl-3" :to="link.to">
+                {{ link.name }}
+              </router-link>
+            </v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+
       <v-toolbar-title class="px-3">
         <router-link to="/" class="text-decoration-none black--text">
           w-haibara.com
         </router-link>
       </v-toolbar-title>
-      <div v-for="(link, i) in links" :key="i">
-        <router-link class="pl-3" :to="link.to">{{ link.name }}</router-link>
-      </div>
+
+      <template v-if="!$vuetify.breakpoint.xs">
+        <span class="pl-3" v-for="(link, i) in links" :key="i">
+          <router-link :to="link.to">
+            {{ link.name }}
+          </router-link>
+        </span>
+      </template>
     </v-app-bar>
     <v-main>
       <router-view />
@@ -35,37 +57,24 @@ export default {
     links: function () {
       return [
         {
-          name: "Profile",
           to: "/profile",
+          name: "Profile",
+        },
+        {
+          to: "/logs",
+          name: "Logs",
+        },
+        {
+          to: "/works",
+          name: "Works",
+        },
+        {
+          to: "/slides",
+          name: "Slides",
         },
       ];
     },
   },
-};
-</script>
-
-<script>
-export default {
-  data: () => ({
-    links: [
-      {
-        to: "/profile",
-        name: "Profile",
-      },
-      {
-        to: "/logs",
-        name: "Logs",
-      },
-      {
-        to: "/works",
-        name: "Works",
-      },
-      {
-        to: "/slides",
-        name: "Slides",
-      },
-    ],
-  }),
 };
 </script>
 

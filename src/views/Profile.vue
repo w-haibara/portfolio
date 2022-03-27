@@ -1,11 +1,14 @@
-
 <template>
   <v-sheet class="blue-grey--text text--darken-4" tile>
     <v-container>
       <h1 class="font-weight-light">w-haibara</h1>
       <div>
-        Software Engineer at 
-        <a href="https://corp.raksul.com" target="_blank" rel="noopener">RAKSUL INC.</a>
+        <p>
+          Software Engineer at
+          <a href="https://corp.raksul.com" target="_blank" rel="noopener"
+            >RAKSUL INC.</a
+          >
+        </p>
       </div>
 
       <ul class="py-5">

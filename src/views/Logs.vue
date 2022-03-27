@@ -52,11 +52,9 @@ export default {
               href: "https://hatenacorp.jp/intern2020/first",
             },
             {
-              text:
-                "Lecture about vulnerability of C code at Security Mini Camp in Hokkaido.",
+              text: "Lecture about vulnerability of C code at Security Mini Camp in Hokkaido.",
               icon: "mdi-security",
-              href:
-                "https://www.security-camp.or.jp/minicamp/hokkaido2020.html",
+              href: "https://www.security-camp.or.jp/minicamp/hokkaido2020.html",
             },
           ],
         },
@@ -84,8 +82,7 @@ export default {
               href: "https://local.or.jp/",
             },
             {
-              text:
-                "Learn information technology at Muroran Institute of Technology (~2022).",
+              text: "Learn information technology at Muroran Institute of Technology (~2022).",
               icon: "mdi-school",
               href: "https://www.muroran-it.ac.jp/",
             },

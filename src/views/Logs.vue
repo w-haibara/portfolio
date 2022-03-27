@@ -47,6 +47,11 @@ export default {
           year: 2022,
           logs: [
             {
+              text: "Start working at RAKSUL INC.",
+              icon: "mdi-school",
+              href: "https://corp.raksul.com",
+            },
+            {
               text: "Obtained a degree from Muroran Institute of Technology.",
               icon: "mdi-school",
               href: "https://www.muroran-it.ac.jp/",
@@ -61,20 +66,25 @@ export default {
               icon: "mdi-security",
               href: "https://www.ipa.go.jp/jinzai/camp/2020/zenkoku2020_index.html",
             },
+            {
+              text: "Participated in an internship at RAKSUL INC.",
+              icon: "mdi-office-building-outline",
+              href: "https://tech.raksul.com/2022/02/21/22graduate-intern/",
+            },
           ],
         },
         {
           year: 2020,
           logs: [
             {
-              text: "Participated in an internship at Hatena Co., Ltd.",
-              icon: "mdi-office-building-outline",
-              href: "https://hatenacorp.jp/intern2020/first",
-            },
-            {
               text: "Lectured at Security Mini Camp in Hokkaido.",
               icon: "mdi-microphone-variant",
               href: "https://www.security-camp.or.jp/minicamp/hokkaido2020.html",
+            },
+            {
+              text: "Participated in an internship at Hatena Co., Ltd.",
+              icon: "mdi-office-building-outline",
+              href: "https://hatenacorp.jp/intern2020/first",
             },
           ],
         },

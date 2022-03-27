@@ -48,7 +48,7 @@ export default {
           logs: [
             {
               text: "Start working at RAKSUL INC.",
-              icon: "mdi-school",
+              icon: "mdi-office-building-outline",
               href: "https://corp.raksul.com",
             },
             {
@@ -70,6 +70,11 @@ export default {
               text: "Participated in an internship at RAKSUL INC.",
               icon: "mdi-office-building-outline",
               href: "https://tech.raksul.com/2022/02/21/22graduate-intern/",
+            },
+            {
+              text: "Participated in SecHack365 as an assistant.",
+              icon: "mdi-security",
+              href: "https://sechack365.nict.go.jp/report/2021/report_week01.html",
             },
           ],
         },

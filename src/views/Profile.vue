@@ -4,14 +4,8 @@
     <v-container>
       <h1 class="font-weight-light">w-haibara</h1>
       <div>
-        <p class="paragraph font-weight-meduim">
-          Student learning about information technology. And next year, I will
-          be a software engineer at Tokyo.
-        </p>
-        <p class="paragraph font-weight-meduim">
-          I am interested in the Web, systems programming, and community of
-          engineers.
-        </p>
+        Software Engineer at 
+        <a href="https://corp.raksul.com" target="_blank" rel="noopener">RAKSUL INC.</a>
       </div>
 
       <ul class="py-5">
@@ -37,7 +31,7 @@ export default {
         {
           media: "Twitter",
           name: "@w_haibara",
-          href: "https://twitter.com/w_haibara  ",
+          href: "https://twitter.com/w_haibara",
         },
         {
           media: "GitHub",
@@ -78,13 +72,5 @@ export default {
 
 a {
   text-decoration: none;
-  display: inline-block;
-  transition: 0.3s;
-  -webkit-transform: scale(1);
-  transform: scale(1);
-}
-a:hover {
-  -webkit-transform: scale(1.05);
-  transform: scale(1.05);
 }
 </style>

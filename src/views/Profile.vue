@@ -1,15 +1,14 @@
 <template>
   <v-sheet class="blue-grey--text text--darken-4" tile>
     <v-container>
-      <h1 class="font-weight-light">w-haibara</h1>
-      <div>
-        <p>
-          Software Engineer at
-          <a href="https://corp.raksul.com" target="_blank" rel="noopener">
-            RAKSUL INC.
-          </a>
-        </p>
-      </div>
+      <h1 class="font-weight-light">Profile</h1>
+      <p>
+        Software Engineer at
+        <a href="https://corp.raksul.com" target="_blank" rel="noopener"
+          >RAKSUL INC</a
+        >. <br />
+        I’m interested in Web and System software.
+      </p>
 
       <ul class="py-5">
         <li v-for="(link, i) in links" :key="i">

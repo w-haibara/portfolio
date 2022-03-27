@@ -15,7 +15,7 @@
             <v-list-item-content>
               <v-list-item-title class="wrap-text">
                 <span class="font-weight-bold" style="font-size: large">
-                  {{ item.year }}, {{ item.title }}
+                  {{ item.year }} {{ item.title }}
                 </span>
                 <v-icon color="blue-grey darken-5" x-small right>
                   fas fa-external-link-alt
@@ -39,6 +39,18 @@ export default {
   computed: {
     items: function () {
       return [
+        {
+          title: "kakemoti",
+          year: 2022,
+          text: "ASL(Amazon States Language) interpreter.",
+          href: "https://github.com/w-haibara/lalash",
+        },
+        {
+          title: "lalash",
+          year: 2022,
+          text: "A toy shell written in Go.",
+          href: "https://github.com/w-haibara/lalash",
+        },
         {
           title: "unlambda",
           year: 2021,

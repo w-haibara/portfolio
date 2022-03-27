@@ -5,9 +5,9 @@
       <div>
         <p>
           Software Engineer at
-          <a href="https://corp.raksul.com" target="_blank" rel="noopener"
-            >RAKSUL INC.</a
-          >
+          <a href="https://corp.raksul.com" target="_blank" rel="noopener">
+            RAKSUL INC.
+          </a>
         </p>
       </div>
 

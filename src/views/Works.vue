@@ -15,7 +15,7 @@
             <v-list-item-content>
               <v-list-item-title class="wrap-text">
                 <span class="font-weight-bold" style="font-size: large">
-                  {{ item.title }}
+                  {{ item.year }} {{ item.title }}
                 </span>
                 <v-icon color="blue-grey darken-5" x-small right>
                   fas fa-external-link-alt
@@ -40,27 +40,38 @@ export default {
     items: function () {
       return [
         {
+          title: "kakemoti",
+          year: 2022,
+          text: "ASL(Amazon States Language) interpreter.",
+          href: "https://github.com/w-haibara/lalash",
+        },
+        {
+          title: "lalash",
+          year: 2022,
+          text: "A toy shell written in Go.",
+          href: "https://github.com/w-haibara/lalash",
+        },
+        {
           title: "unlambda",
+          year: 2021,
           text: "A toy Unlambda interpreter written in Go.",
           href: "https://github.com/w-haibara/unlambda",
         },
         {
-          title: "osoba",
-          text: "Static site deployment manager.",
-          href: "https://github.com/w-haibara/osoba",
-        },
-        {
           title: "vtd4",
+          year: 2020,
           text: "TD4 emulator written in Vue.js with Vuetify.",
           href: "https://github.com/w-haibara/vtd4",
         },
         {
           title: "syshello",
+          year: 2019,
           text: "A script for development of Linux system call.",
           href: "https://github.com/w-haibara/syshello",
         },
         {
           title: "caes",
+          year: 2019,
           text: "Full scratch implementation of AES-128-CTR for study.",
           href: "https://github.com/w-haibara/caes",
         },

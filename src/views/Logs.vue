@@ -44,19 +44,52 @@ export default {
     items: function () {
       return [
         {
+          year: 2022,
+          logs: [
+            {
+              text: "Start working at RAKSUL INC.",
+              icon: "mdi-office-building-outline",
+              href: "https://corp.raksul.com",
+            },
+            {
+              text: "Obtained a degree from Muroran Institute of Technology.",
+              icon: "mdi-school",
+              href: "https://www.muroran-it.ac.jp/",
+            },
+          ],
+        },
+        {
+          year: 2021,
+          logs: [
+            {
+              text: "Learned cybersecurity at Security Camp.",
+              icon: "mdi-security",
+              href: "https://www.ipa.go.jp/jinzai/camp/2020/zenkoku2020_index.html",
+            },
+            {
+              text: "Participated in an internship at RAKSUL INC.",
+              icon: "mdi-office-building-outline",
+              href: "https://tech.raksul.com/2022/02/21/22graduate-intern/",
+            },
+            {
+              text: "Participated in SecHack365 as an assistant.",
+              icon: "mdi-security",
+              href: "https://sechack365.nict.go.jp/report/2021/report_week01.html",
+            },
+          ],
+        },
+        {
           year: 2020,
           logs: [
             {
-              text: "Participate in internship at Hatena Co., Ltd.",
-              icon: "mdi-fountain-pen-tip",
-              href: "https://hatenacorp.jp/intern2020/first",
+              text: "Lectured at Security Mini Camp in Hokkaido.",
+              icon: "mdi-microphone-variant",
+              href: "https://www.security-camp.or.jp/minicamp/hokkaido2020.html",
             },
             {
-              text:
-                "Lecture about vulnerability of C code at Security Mini Camp in Hokkaido.",
-              icon: "mdi-security",
-              href:
-                "https://www.security-camp.or.jp/minicamp/hokkaido2020.html",
+              text: "Participated in an internship at Hatena Co., Ltd.",
+              icon: "mdi-office-building-outline",
+              href: "https://hatenacorp.jp/intern2020/first",
             },
           ],
         },
@@ -69,7 +102,7 @@ export default {
               href: "https://www.janog.gr.jp/meeting/janog45/newsletter/iot",
             },
             {
-              text: "Survey and develop about IoT Security at SecHack365.",
+              text: "Learned cybersecurity at SecHack365.",
               icon: "mdi-security",
               href: "http://sechack365.nict.go.jp/",
             },
@@ -79,13 +112,12 @@ export default {
           year: 2018,
           logs: [
             {
-              text: "Member of LOCAL Students(一般社団法人LOCAL).",
+              text: "Joined LOCAL(一般社団法人LOCAL).",
               icon: "mdi-human-greeting",
               href: "https://local.or.jp/",
             },
             {
-              text:
-                "Learn information technology at Muroran Institute of Technology (~2022).",
+              text: "Entered Muroran Institute of Technology.",
               icon: "mdi-school",
               href: "https://www.muroran-it.ac.jp/",
             },

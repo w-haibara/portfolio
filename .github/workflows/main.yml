@@ -1,12 +1,12 @@
 name: Deploy
 on:
   pull_request:
+    branches: [release]
     types:
       - closed
-  push:
 jobs:
   if_merged:
-    if: github.event.pull_request.merged == true || true
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-18.04
     strategy:
       matrix:
@@ -17,6 +17,6 @@ jobs:
       run: |
         yarn install
         yarn build
-    - name: show
+    - name: push to release
       run: |
         ls -l ./dist/*

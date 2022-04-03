@@ -17,6 +17,14 @@ jobs:
       run: |
         yarn install
         yarn build
-    - name: push to release
+    - name: push to release　branch
       run: |
         ls -l ./dist/*
+        mv ./dist /tmp/
+        cd /tmp/dist/
+        git init
+        git remote add origin git@github.com:w-haibara/portfolio
+        git checkout -b release
+        git add .
+        git commit -m update
+        git push origin release -f

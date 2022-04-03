@@ -19,9 +19,10 @@ jobs:
         yarn build
     - name: push to release　branch
       run: |
-        ls -l ./dist/*
         mv ./dist /tmp/
         cd /tmp/dist/
+        git config user.name github-actions
+        git config user.email github-actions@github.com
         git init
         git remote add origin git@github.com:w-haibara/portfolio
         git checkout -b release

@@ -17,15 +17,9 @@ jobs:
       run: |
         yarn install
         yarn build
-    - name: push to release　branch
-      run: |
-        mv ./dist /tmp/
-        rm -rf ./*
-        mv /tmp/dist/* .
-        ls -la
-        git config user.name github-actions
-        git config user.email github-actions@github.com
-        git checkout -b release
-        git add .
-        git commit -m update
-        git push origin release -f
+    - name: deploy
+      uses: peaceiris/actions-gh-pages@v3
+      if: ${{ github.ref == 'refs/heads/main' }}
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist

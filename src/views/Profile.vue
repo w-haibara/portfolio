@@ -2,22 +2,21 @@
   <v-sheet class="blue-grey--text text--darken-4" tile>
     <v-container>
       <h1 class="font-weight-light">Profile</h1>
-      <p>
-        Software Engineer at
-        <a href="https://corp.raksul.com" target="_blank" rel="noopener"
-          >RAKSUL INC</a
-        >. <br />
-        I’m interested in Web and System software.
-      </p>
+      <div id="mainText"></div>
 
       <ul class="py-5">
-        <li v-for="(link, i) in links" :key="i">
-          {{ link.media }}:
-          <a v-if="link.href" :href="link.href" target="_blank" rel="noopener">
-            {{ link.name }}
+        <li v-for="(contact, i) in contacts" :key="i">
+          {{ contact.title }}:
+          <a
+            v-if="contact.link"
+            :href="contact.link"
+            target="_blank"
+            rel="noopener"
+          >
+            {{ contact.id0 }}
           </a>
           <span v-else>
-            {{ link.name }}
+            {{ contact.id0 }}
           </span>
         </li>
       </ul>
@@ -27,35 +26,12 @@
 
 <script>
 export default {
+  mounted: function () {
+    document.getElementById("mainText").innerHTML = this.$content.body;
+  },
   computed: {
-    links: function () {
-      return [
-        {
-          media: "Twitter",
-          name: "@w_haibara",
-          href: "https://twitter.com/w_haibara",
-        },
-        {
-          media: "GitHub",
-          name: "w-haibara",
-          href: "http://github.com/w-haibara",
-        },
-        {
-          media: "Facebook",
-          name: "Wataru Haibara",
-          href: "https://www.facebook.com/wataru.haibara.923",
-        },
-        {
-          media: "Blog",
-          name: "id:w_haibara",
-          href: "https://haibara-works.hatenablog.com/",
-        },
-        {
-          media: "Mail",
-          name: "haibara[at]local.or.jp",
-          href: "",
-        },
-      ];
+    contacts: function () {
+      return this.$content.contacts;
     },
   },
 };

@@ -1,5 +1,7 @@
 name: Deploy
 on:
+  repository_dispatch:
+    types: [prod]
   pull_request:
     branches: [main]
     types:

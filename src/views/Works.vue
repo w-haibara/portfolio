@@ -40,16 +40,6 @@ export default {
     works: function () {
       return this.$content.works;
     },
-    items: function () {
-      return [
-        {
-          title: "kakemoti",
-          year: 2022,
-          text: "ASL(Amazon States Language) interpreter.",
-          href: "https://github.com/w-haibara/lalash",
-        },
-      ];
-    },
   },
 };
 </script>

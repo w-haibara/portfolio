@@ -42,7 +42,6 @@
 export default {
   computed: {
     logs: function () {
-      console.log(this.$content.logs)
       return this.$content.logs;
     },
   },

@@ -12,10 +12,10 @@ jobs:
       matrix:
         node-version: [16.x]
     steps:
+    - uses: actions/checkout@v2
     - name: update content.json
       run: |
         curl -H "X-MICROCMS-API-KEY: ${{secrets.MICROCMS_API_KEY}}" https://w-haibara.microcms.io/api/v1/portfolio > ./src/content.json
-    - uses: actions/checkout@v2
     - name: yarn install, build
       run: |
         yarn install

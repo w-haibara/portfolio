@@ -31,11 +31,6 @@ export default new VueRouter({
             component: Works
         },
         {
-            path: '/slides',
-            name: 'Slides',
-            component: Slides
-        },
-        {
             path: '/slides/:id',
             name: 'SlideView',
             component: SlideView

@@ -68,10 +68,6 @@ export default {
           to: "/works",
           name: "Works",
         },
-        {
-          to: "/slides",
-          name: "Slides",
-        },
       ];
     },
   },

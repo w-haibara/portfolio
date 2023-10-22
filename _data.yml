@@ -1,0 +1,64 @@
+contacts:
+  - service: Twitter
+    name: "@w_haibara"
+    link: https://twitter.com/w_haibara
+  - service: GitHub
+    name: w-haibara
+    link: https://github.com/w-haibara
+  - service: Blog
+    name: id:w_haibara
+    link: https://haibara-works.hatenablog.com/
+  - service: Mail
+    name: haibara[at]local.or.jp
+
+logs:
+  - title: 2022年度SecHack365にアシスタントとして参加
+    year: 2022
+  - title: ラクスル株式会社に入社
+    year: 2022
+  - title: 室蘭工業大学を卒業 (学士)
+    year: 2022
+  - title: セキュリティ・キャンプ全国大会に参加
+    year: 2021
+  - title: ラクスル株式会社でインターンシップ
+    year: 2021
+  - title: 2021年度SecHack365にアシスタントとして参加
+    year: 2021
+  - title: セキュリティ・ミニキャンプ in 北海道 2020で講師を担当
+    year: 2020
+  - title: 株式会社はてなでインターンシップ
+    year: 2020
+  - title: JANOG45で登壇
+    year: 2019
+  - title: 2019年度SecHack365に参加
+    year: 2019
+  - title: 一般社団法人LOCALに参加
+    year: 2018
+  - title: 室蘭工業大学に入学
+    year: 2018
+
+works:
+  - title: "kakemoti"
+    year: 2022
+    link: "https://github.com/w-haibara/kakemoti"
+    desc: "ASL(Amazon States Language) interpreter."
+  - title: "lalash"
+    year: 2022
+    link: "https://github.com/w-haibara/lalash"
+    desc: "A toy Unlambda interpreter written in Go."
+  - title: "unlambda"
+    year: 2021
+    link: "https://github.com/w-haibara/unlambda"
+    desc: "A toy Unlambda interpreter written in Go."
+  - title: "vtd4"
+    year: 2020
+    link: "https://github.com/w-haibara/vtd4"
+    desc: "TD4 emulator written in Vue.js with Vuetify."
+  - title: "syshello"
+    year: 2019
+    link: "https://github.com/w-haibara/syshello"
+    desc: "A script for development of Linux system call."
+  - title: "caes"
+    year: 2019
+    link: "https://github.com/w-haibara/caes"
+    desc: "Full scratch implementation of AES-128-CTR for study."

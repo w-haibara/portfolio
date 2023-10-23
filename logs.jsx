@@ -11,7 +11,7 @@ export default function (data) {
   return (
     <>
       <h1>Logs</h1>
-      <ul className="py-5">{logs}</ul>
+      <ul>{logs}</ul>
     </>
   );
 }

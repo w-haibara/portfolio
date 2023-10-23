@@ -16,6 +16,7 @@ export default function (data) {
   return (
     <>
       <h1>Works</h1>
+      <p>これまでに作ったもの。メンテナンスされていないものを含みます。</p>
       <ul className="py-5">{works}</ul>
     </>
   );

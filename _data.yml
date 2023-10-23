@@ -38,6 +38,10 @@ logs:
     year: 2018
 
 works:
+  - title: "markdown-builder"
+    year: 2022
+    link: "https://github.com/w-haibara/markdown-builder"
+    desk: "Markdown builder for Go"
   - title: "kakemoti"
     year: 2022
     link: "https://github.com/w-haibara/kakemoti"

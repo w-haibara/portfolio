@@ -38,6 +38,10 @@ logs:
     year: 2018
 
 works:
+  - title: "docker-wrapper"
+    year: 2022
+    link: "https://github.com/w-haibara/docker-wrapper"
+    desc: "Docker command wrapper for Go"
   - title: "markdown-builder"
     year: 2022
     link: "https://github.com/w-haibara/markdown-builder"

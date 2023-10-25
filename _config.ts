@@ -3,17 +3,25 @@ import jsx from "lume/plugins/jsx.ts";
 import tailwindcss from "lume/plugins/tailwindcss.ts";
 import postcss from "lume/plugins/postcss.ts";
 import typography from "npm:@tailwindcss/typography";
+import forms from "npm:@tailwindcss/forms";
 
 const site = lume()
   .use(jsx())
   .use(
     tailwindcss({
       options: {
-        plugins: [typography],
+        plugins: [typography, forms],
       },
-    })
+    }),
   )
   .use(postcss())
-  .copy("img");
+  .copy("img")
+  .copy("scripts");
+
+site.script(
+  "update-hatenablog-posts",
+  `curl https://haibara-works.hatenablog.com/rss | yq -p xml '[.rss.channel.item[]] | {"hatenablog": .}' > _data.hatenablog.yml`,
+);
+await site.run("update-hatenablog-posts");
 
 export default site;

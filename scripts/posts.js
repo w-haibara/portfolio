@@ -11,16 +11,16 @@ document.addEventListener("alpine:init", () => {
   );
 
   Alpine.store("filter", function (posts, search) {
-    posts.forEach((post) => (post.element.style.display = "none"));
+    const test = function (post, search) {
+      return [post.title, post.description]
+        .join()
+        .toLowerCase()
+        .includes(search.toLowerCase());
+    };
 
-    posts
-      .filter((post) =>
-        [post.title, post.description]
-          .join()
-          .toLowerCase()
-          .includes(search.toLowerCase())
-      )
-      .forEach((post) => (post.element.style.display = ""));
+    posts.forEach(
+      (post) => (post.element.style.display = test(post, search) ? "" : "none")
+    );
   });
 
   document.getElementById("posts-block").setAttribute(

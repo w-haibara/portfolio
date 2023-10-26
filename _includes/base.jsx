@@ -6,7 +6,7 @@ export default function ({ comp, children }) {
   );
   return (
     <>
-      <div className="flex flex-col h-screen">
+      <div className="flex flex-col h-screen font-sans">
         <comp.header />
         <div className="mx-auto">{body}</div>
         <comp.footer />

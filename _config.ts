@@ -12,6 +12,13 @@ const site = lume()
     tailwindcss({
       options: {
         plugins: [typography, forms],
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Noto Sans JP"],
+            },
+          },
+        },
       },
     }),
   )

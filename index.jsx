@@ -26,7 +26,7 @@ export default function (data) {
       </p>
       <div className="flex flex-row">
         <div className="basis-1/2">
-          <img src="/img/image.webp" />
+          <img className="w-64 h-64" src="/img/image.webp" />
         </div>
         <div className="basis-1/2">
           <ul className="py-5">{contacts}</ul>

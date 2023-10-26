@@ -31,9 +31,9 @@ export default function (data) {
 
         <div className="sm:flex sm:justify-between sm:gap-4">
           <div>
-            <h3 className="text-lg font-bold text-gray-900 sm:text-xl">
+            <h2 className="text-lg font-bold text-gray-900 sm:text-xl">
               {post.title}
-            </h3>
+            </h2>
 
             <p className="mt-1 text-xs font-medium text-gray-600">
               {post.date}
@@ -92,8 +92,8 @@ export default function (data) {
         </div>
 
         <ul>
-          <div id="posts-items">
-          </div>
+          <li id="posts-items" className="hidden">
+          </li>
           {posts}
         </ul>
       </div>

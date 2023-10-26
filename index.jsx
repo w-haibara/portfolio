@@ -5,13 +5,13 @@ export default function (data) {
     <li key={"contant-" + ind}>
       <span>{contact.service}</span>
       <span className="px-2">
-        {contact.link ? (
-          <a href={contact.link} target="_blank" rel="noopener">
-            {contact.name}
-          </a>
-        ) : (
-          <span>{contact.name}</span>
-        )}
+        {contact.link
+          ? (
+            <a href={contact.link} target="_blank" rel="noopener">
+              {contact.name}
+            </a>
+          )
+          : <span>{contact.name}</span>}
       </span>
     </li>
   ));
@@ -26,7 +26,7 @@ export default function (data) {
       </p>
       <div className="flex flex-row">
         <div className="basis-1/2">
-          <img src="/img/image.png" />
+          <img src="/img/image.webp" />
         </div>
         <div className="basis-1/2">
           <ul className="py-5">{contacts}</ul>

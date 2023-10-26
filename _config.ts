@@ -2,6 +2,7 @@ import lume from "lume/mod.ts";
 import jsx from "lume/plugins/jsx.ts";
 import tailwindcss from "lume/plugins/tailwindcss.ts";
 import postcss from "lume/plugins/postcss.ts";
+import imagick from "lume/plugins/imagick.ts";
 import typography from "npm:@tailwindcss/typography";
 import forms from "npm:@tailwindcss/forms";
 
@@ -15,7 +16,7 @@ const site = lume()
     }),
   )
   .use(postcss())
-  .copy("img")
+  .use(imagick())
   .copy("scripts");
 
 site.script(

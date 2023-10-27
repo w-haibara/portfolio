@@ -1,5 +1,5 @@
 export default ({ comp, children }) => (
-  <html>
+  <html lang="ja">
     <head>
       <title>w-haibara.com</title>
       <meta charSet="UTF-8" />

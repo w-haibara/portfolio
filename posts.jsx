@@ -15,7 +15,7 @@ export default function (data) {
     "title": post.title,
     "link": post.link,
     "date": parseDate(post.pubDate),
-    "description": post.description.replace(/(<([^>]+)>)/gi, ""),
+    "description": post.description.replace(/(<([^>]+)>)/gi, "").slice(0, 500),
   }));
 
   const posts = postsData.map((post) => (

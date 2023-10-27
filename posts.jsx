@@ -10,15 +10,19 @@ export default function (data) {
     ].join("/");
   };
 
-  const html_tag_regex = /(<([^>]+)>)/gi;
-  const postsData = data.hatenablog.map((post, ind) => ({
-    "id": "posts-item-" + ind,
-    "title": post.title,
-    "link": post.link,
-    "date": parseDate(post.pubDate),
-    "desc": post.description.replace(html_tag_regex, "").slice(0, 400),
-    "raw_desc": post.description.replace(html_tag_regex, ""),
-  }));
+  const postsData = data.hatenablog.map((post, ind) => {
+    const desc = post.description
+      .replace(/(<([^>]+)>)/gi, "")
+      .replace(/\s+/g, "");
+    return {
+      "id": "posts-item-" + ind,
+      "title": post.title,
+      "link": post.link,
+      "date": parseDate(post.pubDate),
+      "desc": desc.slice(0, 400),
+      "raw_desc": desc,
+    };
+  });
 
   const posts = postsData.map((post) => (
     <li key={post.id} id={post.id}>

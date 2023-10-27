@@ -22,18 +22,18 @@ document.addEventListener("alpine:init", () => {
       (post) => (post.element.style.display = test(post, search) ? "" : "none")
     );
   });
-
-  document.getElementById("posts-block").setAttribute(
-    "x-data",
-    `{
-      search: '',
-      filter() {
-        $store.filter($store.posts, this.search);
-      }
-    }`
-  );
-
-  const searchElement = document.getElementById("posts-search");
-  searchElement.setAttribute("x-model", "search");
-  searchElement.setAttribute("x-init", "$watch('search', v => filter(v))");
 });
+
+document.getElementById("posts-block").setAttribute(
+  "x-data",
+  `{
+    search: '',
+    filter() {
+      $store.filter($store.posts, this.search);
+    }
+  }`
+);
+
+const searchElement = document.getElementById("posts-search");
+searchElement.setAttribute("x-model", "search");
+searchElement.setAttribute("x-init", "$watch('search', v => filter(v))");

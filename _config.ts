@@ -8,6 +8,7 @@ import forms from "npm:@tailwindcss/forms";
 import postcss from "lume/plugins/postcss.ts";
 import imagick from "lume/plugins/imagick.ts";
 import favicon from "lume/plugins/favicon.ts";
+import inline from "lume/plugins/inline.ts";
 import minifyHTML from "lume/plugins/minify_html.ts";
 import sitemap from "lume/plugins/sitemap.ts";
 
@@ -25,9 +26,9 @@ const site = lume()
   .use(favicon({
     input: "/img/image.png",
   }))
+  .use(inline())
   .use(minifyHTML())
-  .use(sitemap())
-  .copy("scripts");
+  .use(sitemap());
 
 site.script(
   "update-hatenablog-posts",

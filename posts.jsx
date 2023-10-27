@@ -104,7 +104,7 @@ export default function (data) {
         data-json={JSON.stringify(postsData)}
       >
       </script>
-      <script src="/scripts/posts.js"></script>
+      <script src="/scripts/posts.js" inline="true"></script>
     </>
   );
 }

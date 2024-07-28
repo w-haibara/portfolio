@@ -27,7 +27,7 @@ export default function (data) {
       <div className="flex flex-row">
         <div className="basis-1/2">
           <img
-            className="w-64 h-64 mx-auto"
+            className="w-64 h-64 mx-auto aspect-square"
             src="/img/image.webp"
             alt="地元の写真。草が生い茂る線路の向こうに山々が広がっている。"
           />

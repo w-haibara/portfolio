@@ -29,7 +29,7 @@ export default function (data) {
           <img
             className="w-64 h-64 mx-auto"
             src="/img/image.webp"
-            alt="地元の写真"
+            alt="地元の写真。草が生い茂る線路の向こうに山々が広がっている。"
           />
         </div>
         <div className="basis-1/2">

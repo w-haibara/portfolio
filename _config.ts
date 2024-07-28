@@ -6,7 +6,7 @@ import typography from "npm:@tailwindcss/typography";
 import forms from "npm:@tailwindcss/forms";
 
 import postcss from "lume/plugins/postcss.ts";
-import imagick from "lume/plugins/imagick.ts";
+import transformImages from "lume/plugins/transform_images.ts";
 import favicon from "lume/plugins/favicon.ts";
 import inline from "lume/plugins/inline.ts";
 import minifyHTML from "lume/plugins/minify_html.ts";
@@ -22,7 +22,7 @@ const site = lume()
     }),
   )
   .use(postcss())
-  .use(imagick())
+  .use(transformImages())
   .use(favicon({
     input: "/img/image.png",
   }))

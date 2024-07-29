@@ -78,7 +78,7 @@ export default function (data) {
               placeholder="Search for..."
               className="w-full rounded-md border-gray-200 py-2.5 pe-10 shadow-sm sm:text-sm"
               x-model="search"
-              x-init="$watch('search', v => window.filterPosts(v))"
+              x-init="$watch('search', v => $store.posts.filter(v))"
             />
 
             <span className="absolute inset-y-0 end-0 grid w-10 place-content-center">
@@ -112,6 +112,8 @@ export default function (data) {
         </ul>
       </div>
 
+      <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js">
+      </script>
       <script src="/scripts/posts.js" inline="true"></script>
     </>
   );

@@ -1,11 +1,6 @@
 export const layout = "_includes/base.jsx";
 
 export default function (data) {
-  fetch("https://w-haibara.exe.xyz/inc", { method: "POST" });
-  
-  const { count } = await (await fetch("https://w-haibara.exe.xyz/count")).json();
-  console.log(count);
-  
   const contacts = data.contacts.map((contact, ind) => (
     <li key={"contant-" + ind}>
       <span>{contact.service}</span>

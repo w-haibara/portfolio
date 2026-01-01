@@ -14,6 +14,6 @@
     const { count } = await res.json();
     Alpine.store("pageview", String(count))
   } catch (_) {
-    el.textContent = "-";
+    Alpine.store("pageview", "-")
   }
 })();

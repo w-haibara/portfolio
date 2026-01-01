@@ -36,8 +36,6 @@ export default function (data) {
           <ul className="py-5">{contacts}</ul>
         </div>
       </div>
-      <span id="pageview-count"></span>
-      <script src="/scripts/pageview.js" inline="true"></script>
     </>
   );
 }

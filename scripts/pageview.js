@@ -9,13 +9,10 @@
     });
   } catch (_) {}
 
-  const el = document.getElementById("pageview-count");
-  if (!el) return;
-
   try {
     const res = await fetch(`${ORIGIN}/count`, { cache: "no-store" });
     const { count } = await res.json();
-    el.textContent = String(count);
+    Alpine.store("pageview", String(count))
   } catch (_) {
     el.textContent = "-";
   }

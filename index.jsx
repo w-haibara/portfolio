@@ -37,6 +37,7 @@ export default function (data) {
         </div>
       </div>
       <span id="pageview-count"></span>
+      <script src="/scripts/posts.js" inline="true"></script>
     </>
   );
 }

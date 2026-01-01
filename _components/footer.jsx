@@ -1,6 +1,4 @@
 export default function () {
-  const visitorCount = 123;
-
   return (
     <>
       <footer className="bg-white mt-auto">
@@ -21,7 +19,9 @@ export default function () {
               </div>
 
               <div className="mt-2 text-xs text-gray-500 sm:mt-0 sm:text-right">
-                あなたは{visitorCount}人目の訪問者です
+                あなたは
+                <span x-text="$store.pageview"></span>
+                人目の訪問者です
               </div>
             </div>
           </div>

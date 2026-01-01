@@ -7,7 +7,6 @@ export default ({ comp, children }) => (
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="description" content="灰原 渉のホームページ" />
       <link rel="stylesheet" href="/styles/tailwind.css" />
-      <script src="/scripts/pageview.js" inline="true"></script>
     </head>
     <body>
       <comp.header />

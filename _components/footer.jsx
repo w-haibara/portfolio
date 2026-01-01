@@ -27,6 +27,8 @@ export default function () {
           </div>
         </div>
       </footer>
+
+      <script src="/scripts/pageview.js" inline="true"></script>
     </>
   );
 }

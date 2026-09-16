@@ -17,12 +17,6 @@ export default function () {
                 </a>
                 <span className="copyright ml-5">&copy; 2023 w-haibara</span>
               </div>
-
-              <div className="mt-2 text-xs text-gray-500 sm:mt-0 sm:text-right">
-                あなたは
-                <span x-text="$store.pageview"></span>
-                人目の訪問者です
-              </div>
             </div>
           </div>
         </div>
